@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 z-0">
           <img 
-            src="/src/pics/hradok_noc.webp" 
+            src="/pics/hradok_noc.webp" 
             alt="Malá Fatra Mountains" 
             className="w-full h-full object-cover scale-105"
           />

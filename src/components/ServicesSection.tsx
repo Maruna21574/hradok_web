@@ -17,12 +17,12 @@ export const services = [
     longDesc: "Váš svadobný deň si zaslúži výnimočné miesto. Ponúkame exkluzívny prenájom celého objektu, čo zaručuje absolútne súkromie pre vás a vašich hostí. Naše priestory sú ideálne pre romantické svadby a jubileá.",
     features: ["Kapacita do 40 hostí", "Ubytovanie pre svadobčanov", "Možnosť obradu v prírode", "Kompletný catering na mieru"],
     icon: <Star className="w-8 h-8" />,
-    image: "/src/pics/hradok_svadba_5.webp",
+    image: "/pics/hradok_svadba_5.webp",
     gallery: [
-      "/src/pics/hradok_svadba_5.webp",
-      "/src/pics/hradok_svadba_dialka.webp",
-      "/src/pics/hradok_svadba_kolaz.webp",
-      "/src/pics/hradok_svadba.webp"
+      "/pics/hradok_svadba_5.webp",
+      "/pics/hradok_svadba_dialka.webp",
+      "/pics/hradok_svadba_kolaz.webp",
+      "/pics/hradok_svadba.webp"
     ]
   },
   {
@@ -32,11 +32,11 @@ export const services = [
     longDesc: "Vymeňte mestský ruch za inšpiratívne horské prostredie. Hotel Hrádok je ideálnym miestom pre vaše firemné výjazdy, strategické plánovania alebo teambuildingové aktivity, ktoré posilnia váš tím.",
     features: ["Konferenčná technika", "Wi-Fi v celom objekte", "Outdoorové aktivity", "Súkromná vináreň pre večerný program"],
     icon: <Building2 className="w-8 h-8" />,
-    image: "/src/pics/hradok_team_2.webp",
+    image: "/pics/hradok_team_2.webp",
     gallery: [
-      "/src/pics/hradok_team.webp",
-      "/src/pics/hradok_team_2.webp",
-      "/src/pics/hradok_team_1.webp"
+      "/pics/hradok_team.webp",
+      "/pics/hradok_team_2.webp",
+      "/pics/hradok_team_1.webp"
     ]
   },
   {
@@ -46,10 +46,10 @@ export const services = [
     longDesc: "Hotel Hrádok je ideálnym miestom pre vaše rodinné oslavy, jubileá, firemné večierky či stretnutia. Ponúkame súkromie, komfort a kompletné zázemie pre nezabudnuteľné zážitky.",
     features: ["Kapacita do 40 hostí", "Ubytovanie", "Kompletný catering", "Možnosť oslavy v exteriéri"],
     icon: <Star className="w-8 h-8" />,
-    image: "/src/pics/hradok_50.webp",
+    image: "/pics/hradok_50.webp",
     gallery: [
-      "/src/pics/hradok_50_1.webp",
-      "/src/pics/hradok_50.webp"
+      "/pics/hradok_50_1.webp",
+      "/pics/hradok_50.webp"
     ]
   },
   {
@@ -59,11 +59,11 @@ export const services = [
     longDesc: "Bezpečné a podnetné prostredie pre detské tábory, školy v prírode alebo športové sústredenia. Naša poloha mimo hlavnej cesty zaručuje bezpečnosť a priamy kontakt s prírodou.",
     features: ["Bezpečný areál", "Blízkosť turistických chodníkov", "Domáca strava", "Spoločenské hry a vybavenie"],
     icon: <Tent className="w-8 h-8" />,
-    image: "/src/pics/hradok_tabor_2.webp",
+    image: "/pics/hradok_tabor_2.webp",
     gallery: [
-      "/src/pics/hradok_tabor.webp",
-      "/src/pics/hradok_tabor_3.webp",
-      "/src/pics/hradok_tabor_2.webp"
+      "/pics/hradok_tabor.webp",
+      "/pics/hradok_tabor_3.webp",
+      "/pics/hradok_tabor_2.webp"
     ]
   }
 ];

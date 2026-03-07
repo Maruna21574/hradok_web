@@ -224,7 +224,7 @@ const ServiceDetailPage = () => {
       <section className="py-20 bg-forest-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="/src/pics/hradok_background.webp" 
+            src="/pics/hradok_background.webp" 
             alt="Background" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
