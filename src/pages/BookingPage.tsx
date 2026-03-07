@@ -69,7 +69,7 @@ const BookingPage = () => {
 
             <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100">
               <h3 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://hotelhradok.eu/sub/api/mail.php" method="POST" onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>
