@@ -1,57 +1,82 @@
+
 <?php
-// CORS povolenie pre doménu (upraviť podľa potreby)
 header('Access-Control-Allow-Origin: https://www.hotelhradok.eu');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
-// Tento skript funguje takto:
-// - mail.php a emailové šablóny (napr. contact.html) majú byť v rovnakom priečinku
-// - web formulár posiela POST (JSON alebo multipart/form-data) na mail.php
-// - admin email nastavíš tu ($to)
-// - server musí podporovať PHP a funkciu mail()
-// - CORS nastav podľa domény
-// - šablónu uprav podľa potreby
-// Nastav email príjemcu
 $to = "info@hotelhradok.eu";
+$from = "Hotel Hrádok <info@hotelhradok.eu>";
+$year = date('Y');
 
 // Načítaj polia z POST
 $name = trim($_POST['name'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $subject = trim($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$eventType = trim($_POST['eventType'] ?? '');
+$dateFrom = trim($_POST['dateFrom'] ?? '');
+$dateTo = trim($_POST['dateTo'] ?? '');
+$guests = trim($_POST['guests'] ?? '');
+$extraInfo = trim($_POST['extraInfo'] ?? '');
+
+// Rozpoznanie typu formulára
+$isBooking = $eventType || $dateFrom || $dateTo || $guests;
 
 // Validácia
-if (!$name || !$email || !$subject || !$message || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!$name || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo "Neplatné údaje.";
     exit;
 }
 
-// Priprav HTML template
-$year = date('Y');
-$html = file_get_contents(__DIR__ . '/contact.html');
-$html = str_replace([
-    '{{name}}',
-    '{{email}}',
-    '{{subject}}',
-    '{{message}}',
-    '{{year}}'
-], [
-    htmlspecialchars($name),
-    htmlspecialchars($email),
-    htmlspecialchars($subject),
-    nl2br(htmlspecialchars($message)),
-    $year
-], $html);
+// Priprav nahradenia
+$replace = [
+    '{{name}}' => htmlspecialchars($name),
+    '{{email}}' => htmlspecialchars($email),
+    '{{subject}}' => htmlspecialchars($subject),
+    '{{message}}' => nl2br(htmlspecialchars($message)),
+    '{{year}}' => $year,
+    '{{phone}}' => htmlspecialchars($phone),
+    '{{eventType}}' => htmlspecialchars($eventType),
+    '{{dateFrom}}' => htmlspecialchars($dateFrom),
+    '{{dateTo}}' => htmlspecialchars($dateTo),
+    '{{guests}}' => htmlspecialchars($guests),
+    '{{extraInfo}}' => nl2br(htmlspecialchars($extraInfo)),
+];
+
+// Výber šablóny
+if ($isBooking) {
+    $adminTpl = file_exists(__DIR__ . '/admin-notification-booking.html') ? file_get_contents(__DIR__ . '/admin-notification-booking.html') : '';
+    $clientTpl = file_exists(__DIR__ . '/client-confirmation-booking.html') ? file_get_contents(__DIR__ . '/client-confirmation-booking.html') : '';
+    $adminSubject = "Nová rezervácia z webu | Hotel Hrádok";
+    $clientSubject = "Potvrdenie rezervácie | Hotel Hrádok";
+} else {
+    $adminTpl = file_exists(__DIR__ . '/admin-notification-contact.html') ? file_get_contents(__DIR__ . '/admin-notification-contact.html') : '';
+    $clientTpl = file_exists(__DIR__ . '/client-confirmation-contact.html') ? file_get_contents(__DIR__ . '/client-confirmation-contact.html') : '';
+    $adminSubject = "Nový kontakt z webu | Hotel Hrádok";
+    $clientSubject = "Potvrdenie prijatia dopytu | Hotel Hrádok";
+}
+
+$adminBody = $adminTpl ? str_replace(array_keys($replace), array_values($replace), $adminTpl) : "Nový dopyt: " . print_r($replace, true);
+$clientBody = $clientTpl ? str_replace(array_keys($replace), array_values($replace), $clientTpl) : "Ďakujeme za váš dopyt!";
 
 // Hlavičky
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: Hotel Hrádok <info@hotelhradok.eu>\r\n";
-$headers .= "Reply-To: " . $email . "\r\n";
+$headers .= "From: $from\r\n";
+$headers .= "Reply-To: $email\r\n";
 
-// Odoslanie
-if (mail($to, "Nový dopyt z webu | Hotel Hrádok", $html, $headers)) {
+// Odoslanie adminovi
+$sentAdmin = mail($to, $adminSubject, $adminBody, $headers);
+// Odoslanie klientovi
+$sentClient = mail($email, $clientSubject, $clientBody, $headers);
+
+if ($sentAdmin && $sentClient) {
     echo "Email úspešne odoslaný.";
 } else {
     http_response_code(500);
