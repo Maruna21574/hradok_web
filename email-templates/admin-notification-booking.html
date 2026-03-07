@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Nová rezervácia z webu | Hotel Hrádok</title>
+  <style>
+    body { background: #1a2e22; color: #222; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .container { max-width: 520px; margin: 32px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px #0002; border: 1px solid #c7e8d2; overflow: hidden; }
+    .header { background: #1a2e22; text-align: center; padding: 32px 24px 16px 24px; }
+    .header img { height: 56px; margin-bottom: 8px; }
+    .header h2 { color: #2e7d32; font-size: 26px; margin: 0 0 8px 0; letter-spacing: 2px; }
+    .header .subtitle { color: #fff; font-size: 14px; letter-spacing: 1px; margin-bottom: 0; }
+    .content { padding: 28px 24px 24px 24px; }
+    .content p { color: #222; font-size: 16px; margin-bottom: 18px; }
+    .info-table { width: 100%; font-size: 15px; color: #222; border-collapse: collapse; margin-bottom: 18px; }
+    .info-table td { padding: 7px 0; }
+    .info-table .label { font-weight: bold; color: #2e7d32; width: 140px; }
+    .footer { text-align: center; color: #aaa; font-size: 12px; background: #1a2e22; padding: 18px 0; border-top: 1px solid #c7e8d2; }
+    @media (max-width: 600px) { .container { margin: 0; border-radius: 0; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://hradok.sk/logo.png" alt="Hotel Hrádok logo" />
+      <h2>HOTEL HRÁDOK</h2>
+      <div class="subtitle">Nová rezervácia z webu</div>
+    </div>
+    <div class="content">
+      <p>Bol prijatý nový rezervačný dopyt cez webový formulár:</p>
+      <table class="info-table">
+        <tr><td class="label">Meno a priezvisko:</td><td>{{name}}</td></tr>
+        <tr><td class="label">E-mail:</td><td><a href="mailto:{{email}}" style="color:#2e7d32;text-decoration:none;">{{email}}</a></td></tr>
+        <tr><td class="label">Telefón:</td><td>{{phone}}</td></tr>
+        <tr><td class="label">Typ podujatia:</td><td>{{eventType}}</td></tr>
+        <tr><td class="label">Dátum (od):</td><td>{{dateFrom}}</td></tr>
+        <tr><td class="label">Dátum (do):</td><td>{{dateTo}}</td></tr>
+        <tr><td class="label">Počet hostí:</td><td>{{guests}}</td></tr>
+        <tr><td class="label">Doplňujúce informácie:</td><td style="white-space:pre-line;">{{extraInfo}}</td></tr>
+      </table>
+      <p style="font-size:13px;color:#888;">Odpovedať môžete priamo na tento e-mail.</p>
+    </div>
+    <div class="footer">&copy; {{year}} Hotel Hrádok | <a href="https://hradok.sk" style="color:#2e7d32;text-decoration:none;">www.hradok.sk</a></div>
+  </div>
+</body>
+</html>
