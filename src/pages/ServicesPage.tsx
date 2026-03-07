@@ -186,7 +186,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <img 
-                  src="\pages\vino_img.avif" 
+                  src="\pics\vino_img.avif" 
                   alt="Wine" 
                   className="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl"
                   referrerPolicy="no-referrer"
