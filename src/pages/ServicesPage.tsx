@@ -62,7 +62,7 @@ const ServicesPage = () => {
             </div>
             <div className="relative">
               <img 
-                src="src\pics\hradok_den.webp" 
+                src="/pics/hradok_den.webp" 
                 alt="Event Space" 
                 className="rounded-[3rem] shadow-2xl w-full h-[500px] object-cover"
                 referrerPolicy="no-referrer"
