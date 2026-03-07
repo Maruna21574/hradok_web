@@ -29,7 +29,7 @@ const AboutPage = () => {
             </motion.div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&q=80&w=1000" 
+                src="src\pics\hradok_den.webp" 
                 alt="Hotel Hrádok" 
                 className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
                 referrerPolicy="no-referrer"

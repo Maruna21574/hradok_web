@@ -12,12 +12,18 @@ import {
 export const services = [
   {
     id: 'svadby',
-    title: "Svadby & Oslavy",
+    title: "Svadby",
     desc: "Kompletný prenájom pre váš veľký deň v súkromí hôr.",
-    longDesc: "Váš svadobný deň si zaslúži výnimočné miesto. Ponúkame exkluzívny prenájom celého objektu, čo zaručuje absolútne súkromie pre vás a vašich hostí. Naše priestory sú ideálne pre romantické svadby, jubileá a rodinné stretnutia.",
+    longDesc: "Váš svadobný deň si zaslúži výnimočné miesto. Ponúkame exkluzívny prenájom celého objektu, čo zaručuje absolútne súkromie pre vás a vašich hostí. Naše priestory sú ideálne pre romantické svadby a jubileá.",
     features: ["Kapacita do 40 hostí", "Ubytovanie pre svadobčanov", "Možnosť obradu v prírode", "Kompletný catering na mieru"],
     icon: <Star className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800"
+    image: "/src/pics/hradok_svadba_5.webp",
+    gallery: [
+      "/src/pics/hradok_svadba_5.webp",
+      "/src/pics/hradok_svadba_dialka.webp",
+      "/src/pics/hradok_svadba_kolaz.webp",
+      "/src/pics/hradok_svadba.webp"
+    ]
   },
   {
     id: 'firmy',
@@ -26,16 +32,25 @@ export const services = [
     longDesc: "Vymeňte mestský ruch za inšpiratívne horské prostredie. Hotel Hrádok je ideálnym miestom pre vaše firemné výjazdy, strategické plánovania alebo teambuildingové aktivity, ktoré posilnia váš tím.",
     features: ["Konferenčná technika", "Wi-Fi v celom objekte", "Outdoorové aktivity", "Súkromná vináreň pre večerný program"],
     icon: <Building2 className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
+    image: "/src/pics/hradok_team_2.webp",
+    gallery: [
+      "/src/pics/hradok_team.webp",
+      "/src/pics/hradok_team_2.webp",
+      "/src/pics/hradok_team_1.webp"
+    ]
   },
   {
-    id: 'vinaren',
-    title: "Štýlová vináreň",
-    desc: "Posedenie pri kvalitnom víne v autentickej atmosfére.",
-    longDesc: "Naša vináreň je klenotom hotela. Ponúka intímnu atmosféru s výberom tých najlepších vín. Je to ideálne miesto pre večerné posedenia, degustácie alebo neformálne rozhovory pri krbe.",
-    features: ["Široký výber archívnych vín", "Degustačné menu", "Kapacita 20 osôb", "Autentický kamenný dizajn"],
-    icon: <Wine className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=800"
+    id: 'oslavy',
+    title: "Oslavy",
+    desc: "Priestor pre rodinné a firemné oslavy v prírode.",
+    longDesc: "Hotel Hrádok je ideálnym miestom pre vaše rodinné oslavy, jubileá, firemné večierky či stretnutia. Ponúkame súkromie, komfort a kompletné zázemie pre nezabudnuteľné zážitky.",
+    features: ["Kapacita do 40 hostí", "Ubytovanie", "Kompletný catering", "Možnosť oslavy v exteriéri"],
+    icon: <Star className="w-8 h-8" />,
+    image: "/src/pics/hradok_50.webp",
+    gallery: [
+      "/src/pics/hradok_50_1.webp",
+      "/src/pics/hradok_50.webp"
+    ]
   },
   {
     id: 'tabory',
@@ -44,7 +59,12 @@ export const services = [
     longDesc: "Bezpečné a podnetné prostredie pre detské tábory, školy v prírode alebo športové sústredenia. Naša poloha mimo hlavnej cesty zaručuje bezpečnosť a priamy kontakt s prírodou.",
     features: ["Bezpečný areál", "Blízkosť turistických chodníkov", "Domáca strava", "Spoločenské hry a vybavenie"],
     icon: <Tent className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800"
+    image: "/src/pics/hradok_tabor_2.webp",
+    gallery: [
+      "/src/pics/hradok_tabor.webp",
+      "/src/pics/hradok_tabor_3.webp",
+      "/src/pics/hradok_tabor_2.webp"
+    ]
   }
 ];
 
@@ -57,7 +77,7 @@ const ServicesSection = () => {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl -ml-48 -mb-48" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
           <div>
             <span className="text-forest-300 font-bold tracking-widest uppercase text-sm mb-4 block">Čo ponúkame</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
@@ -120,7 +140,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white text-forest-950 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl"
+              className="relative bg-white text-forest-950 w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl"
             >
               <button 
                 onClick={() => setSelectedService(null)}
@@ -162,13 +182,13 @@ const ServicesSection = () => {
                     ))}
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                  <div className="flex flex-col gap-4 mt-10">
                     <button 
                       onClick={() => {
                         setSelectedService(null);
                         window.location.href = '/kontakt';
                       }}
-                      className="flex-grow bg-forest-600 text-white py-4 rounded-xl font-bold hover:bg-forest-700 transition-all"
+                      className="w-full bg-forest-600 text-white py-4 rounded-xl font-bold hover:bg-forest-700 transition-all"
                     >
                       Mám záujem o túto službu
                     </button>
@@ -176,7 +196,7 @@ const ServicesSection = () => {
                       onClick={() => {
                         window.location.href = `/sluzby/${selectedService.id}`;
                       }}
-                      className="flex-grow bg-forest-100 text-forest-900 py-4 rounded-xl font-bold hover:bg-forest-200 transition-all"
+                      className="w-full bg-forest-100 text-forest-900 py-4 rounded-xl font-bold hover:bg-forest-200 transition-all"
                     >
                       Zobraziť viac
                     </button>

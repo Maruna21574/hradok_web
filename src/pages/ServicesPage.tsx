@@ -62,7 +62,7 @@ const ServicesPage = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" 
+                src="src\pics\hradok_den.webp" 
                 alt="Event Space" 
                 className="rounded-[3rem] shadow-2xl w-full h-[500px] object-cover"
                 referrerPolicy="no-referrer"
@@ -186,7 +186,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=800" 
+                  src="src\pages\vino_img.avif" 
                   alt="Wine" 
                   className="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl"
                   referrerPolicy="no-referrer"
@@ -202,7 +202,7 @@ const ServicesPage = () => {
                   <p className="text-sm font-medium">Viac ako 50 druhov archívnych vín v našej pivnici.</p>
                 </div>
                 <img 
-                  src="https://images.unsplash.com/photo-1550966842-2849a2202768?auto=format&fit=crop&q=80&w=800" 
+                  src="src\pics\food_slovak.jpg" 
                   alt="Food" 
                   className="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl"
                   referrerPolicy="no-referrer"

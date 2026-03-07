@@ -9,6 +9,9 @@ const ServiceDetailPage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = services.find(s => s.id === serviceId);
 
+  const [openImgIdx, setOpenImgIdx] = React.useState<number | null>(null);
+  const gallery = service.gallery || [service.image];
+
   if (!service) {
     return (
       <div className="pt-32 pb-20 text-center min-h-screen flex flex-col items-center justify-center">
@@ -123,7 +126,7 @@ const ServiceDetailPage = () => {
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-5">
               <span className="text-forest-600 font-bold uppercase tracking-[0.2em] text-xs mb-6 block">Detailný popis</span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest-950 mb-10 leading-tight">
                 {service.title} <br />
@@ -152,9 +155,8 @@ const ServiceDetailPage = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <div className="lg:col-span-7 lg:sticky lg:top-32">
               <div className="relative">
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-forest-50 rounded-full -z-10" />
                 <div className="bg-forest-50 p-8 md:p-10 rounded-[2.5rem] border border-forest-100">
                   <h3 className="text-2xl font-serif font-bold text-forest-950 mb-6">Máte záujem o túto službu?</h3>
                   <p className="text-forest-700 mb-8 leading-relaxed">
@@ -171,30 +173,49 @@ const ServiceDetailPage = () => {
       {/* Visual Showcase */}
       <section className="pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="h-[500px] rounded-[3rem] overflow-hidden shadow-2xl group">
-              <img 
-                src={service.image} 
-                alt="Detail 1" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
+          <div className="mb-10">
+            <h3 className="text-3xl font-serif font-bold text-forest-950 mb-4">Fotogaléria</h3>
+            <p className="text-forest-600 mb-8 text-lg font-light">Pozrite si atmosféru a priestory našich služieb na reálnych fotografiách.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {gallery.map((img, idx) => (
+                <div key={idx} className="relative h-[220px] sm:h-[260px] md:h-[320px] rounded-2xl overflow-hidden group cursor-pointer shadow-lg border border-forest-100 hover:border-forest-300 transition-all" onClick={() => setOpenImgIdx(idx)}>
+                  <img 
+                    src={img} 
+                    alt={`Galéria ${service.title} ${idx+1}`} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-2 left-2 bg-white/80 text-forest-900 px-3 py-1 rounded-full text-xs font-semibold shadow group-hover:bg-white">Zväčšiť</div>
+                </div>
+              ))}
             </div>
-            <div className="flex flex-col gap-8">
-              <div className="h-[234px] rounded-[3rem] overflow-hidden shadow-xl group">
-                <img 
-                  src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Detail 2" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
+            {openImgIdx !== null && (
+              <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setOpenImgIdx(null)}>
+                <div className="relative max-w-5xl w-full p-12 flex items-center justify-center">
+                  <button className="absolute top-4 right-4 bg-white text-forest-900 rounded-full p-2 shadow-lg hover:bg-forest-100 transition-colors z-10" onClick={e => { e.stopPropagation(); setOpenImgIdx(null); }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  {openImgIdx > 0 && (
+                    <button className="absolute left-4 top-1/2 -translate-y-1/2 bg-white text-forest-900 rounded-full p-2 shadow-lg hover:bg-forest-100 transition-colors z-10" onClick={e => { e.stopPropagation(); setOpenImgIdx(openImgIdx - 1); }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                  )}
+                  {openImgIdx < gallery.length - 1 && (
+                    <button className="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-forest-900 rounded-full p-2 shadow-lg hover:bg-forest-100 transition-colors z-10" onClick={e => { e.stopPropagation(); setOpenImgIdx(openImgIdx + 1); }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  )}
+                  <img src={gallery[openImgIdx]} alt="Galéria detail" className="w-full h-auto max-h-[90vh] rounded-3xl shadow-2xl mx-auto" />
+                </div>
               </div>
-              <div className="bg-forest-900 p-12 rounded-[3rem] text-white flex flex-col justify-center h-[234px]">
-                <p className="text-4xl font-serif font-bold mb-2">100%</p>
-                <p className="text-forest-300 uppercase tracking-widest text-xs font-bold">Súkromie a exkluzivita</p>
-                <p className="mt-4 text-forest-200 text-sm">Celý objekt patrí len vám a vašim hosťom.</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -203,7 +224,7 @@ const ServiceDetailPage = () => {
       <section className="py-20 bg-forest-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070" 
+            src="/src/pics/hradok_background.webp" 
             alt="Background" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

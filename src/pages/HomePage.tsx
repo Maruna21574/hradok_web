@@ -9,13 +9,12 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070" 
-          alt="Malá Fatra Mountains" 
-          className="w-full h-full object-cover scale-105"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-forest-950/60" />
+          <img 
+            src="/src/pics/hradok_noc.webp" 
+            alt="Malá Fatra Mountains" 
+            className="w-full h-full object-cover scale-105"
+          />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-forest-950/80" />
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -31,7 +30,7 @@ const Hero = () => {
             Exkluzívny prenájom <br />
             <span className="italic text-forest-300">pre vaše akcie</span>
           </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="text-white/100 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Prenajmite si celý objekt hotela Hrádok pre vašu svadbu, oslavu alebo firemný teambuilding v srdci Malej Fatry.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -69,7 +68,7 @@ const AboutPreview = () => {
                 className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&q=80&w=1000" 
+                  src="src\pics\hradok_zaber.webp" 
                   alt="Hotel Hrádok Exterior" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -103,7 +102,7 @@ const AboutPreview = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-forest-600 font-bold uppercase tracking-[0.3em] text-xs mb-8 block">O našom koncepte</span>
+              <span className="text-forest-600 font-bold uppercase tracking-[0.3em] text-xs mb-8 block">O našom hotely</span>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-forest-950 mb-10 leading-[0.9] tracking-tighter">
                 Váš súkromný <br />
                 <span className="italic text-forest-600">horský rezort</span>
@@ -120,23 +119,11 @@ const AboutPreview = () => {
 
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <Link to="/o-nas" className="group flex items-center gap-4 bg-forest-950 text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-forest-800">
-                  Viac o nás 
+                  Viac o nás
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                     <ChevronRight className="w-4 h-4" />
                   </div>
                 </Link>
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-3">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-forest-100 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm font-bold text-forest-900 uppercase tracking-widest">
-                    Spokojní klienti
-                  </p>
-                </div>
               </div>
             </motion.div>
           </div>
