@@ -20,7 +20,7 @@ const AboutPage = () => {
               </h1>
               <div className="space-y-6 text-forest-800 leading-relaxed text-lg">
                 <p>
-                  Hotel Hrádok je situovaný v krásnej lokalite Malej Fatry v dedinke Bystrička medzi Veľkou dolinou a dolinou Lázky. Naše tiché horské prostredie je len 10 minút od rušnej hlavnej cesty, čo z nás robí ľahko dostupný, no dokonale izolovaný prístav pokoja.
+                  Hotela Hrádok je situovaný v krásnej lokalite Malej Fatry v dedinke Bystrička medzi Veľkou dolinou a dolinou Lázky. Naše tiché horské prostredie je len 10 minút od rušnej hlavnej cesty, čo z nás robí ľahko dostupný, no dokonale izolovaný prístav pokoja.
                 </p>
                 <p>
                   Po kompletnej rekonštrukcii sme sa rozhodli pre unikátny koncept exkluzívneho prenájmu celého objektu. Veríme, že tie najdôležitejšie životné a pracovné momenty si zaslúžia absolútne súkromie a nerušenú atmosféru.
