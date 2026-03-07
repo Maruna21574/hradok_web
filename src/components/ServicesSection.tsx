@@ -71,6 +71,17 @@ export const services = [
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState<null | typeof services[0]>(null);
 
+  React.useEffect(() => {
+    if (selectedService) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [selectedService]);
+
   return (
     <section id="sluzby" className="section-padding bg-forest-900 text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl -mr-48 -mt-48" />
@@ -140,7 +151,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white text-forest-950 w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl"
+              className="relative bg-white text-forest-950 w-full max-w-5xl rounded-xl sm:rounded-3xl overflow-hidden shadow-2xl max-h-screen overflow-y-auto p-2 sm:p-0"
             >
               <button 
                 onClick={() => setSelectedService(null)}

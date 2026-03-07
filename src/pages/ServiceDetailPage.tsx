@@ -191,8 +191,8 @@ const ServiceDetailPage = () => {
               ))}
             </div>
             {openImgIdx !== null && (
-              <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setOpenImgIdx(null)}>
-                <div className="relative max-w-5xl w-full p-12 flex items-center justify-center">
+              <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setOpenImgIdx(null)}>
+                <div className="relative w-full h-full max-w-5xl flex items-center justify-center p-0 sm:p-12">
                   <button className="absolute top-4 right-4 bg-white text-forest-900 rounded-full p-2 shadow-lg hover:bg-forest-100 transition-colors z-10" onClick={e => { e.stopPropagation(); setOpenImgIdx(null); }}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -212,7 +212,7 @@ const ServiceDetailPage = () => {
                       </svg>
                     </button>
                   )}
-                  <img src={gallery[openImgIdx]} alt="Galéria detail" className="w-full h-auto max-h-[90vh] rounded-3xl shadow-2xl mx-auto" />
+                  <img src={gallery[openImgIdx]} alt="Galéria detail" className="w-full h-full sm:w-full sm:h-auto sm:max-h-[90vh] object-cover sm:rounded-3xl mx-auto" />
                 </div>
               </div>
             )}
