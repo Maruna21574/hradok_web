@@ -11,6 +11,7 @@ const ContactForm = () => {
             <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>
             <input 
               type="text" 
+              name="name"
               className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
               placeholder="Ján Novák"
             />
@@ -19,6 +20,7 @@ const ContactForm = () => {
             <label className="block text-sm font-bold text-forest-700 mb-2">Email</label>
             <input 
               type="email" 
+              name="email"
               className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
               placeholder="jan.novak@example.com"
             />
@@ -28,6 +30,7 @@ const ContactForm = () => {
           <label className="block text-sm font-bold text-forest-700 mb-2">Predmet</label>
           <input 
             type="text" 
+            name="subject"
             className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
             placeholder="Mám záujem o..."
           />
@@ -36,6 +39,7 @@ const ContactForm = () => {
           <label className="block text-sm font-bold text-forest-700 mb-2">Vaša správa</label>
           <textarea 
             rows={5}
+            name="message"
             className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
             placeholder="Sem napíšte vašu správu..."
           ></textarea>
