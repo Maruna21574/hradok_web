@@ -68,7 +68,7 @@ const AboutPreview = () => {
                 className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <img 
-                  src="src\pics\hradok_zaber.webp" 
+                  src="/pics/hradok_zaber.webp" 
                   alt="Hotel Hrádok Exterior" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
