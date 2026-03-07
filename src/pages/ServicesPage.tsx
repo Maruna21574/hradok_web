@@ -186,7 +186,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <img 
-                  src="src\pages\vino_img.avif" 
+                  src="\pages\vino_img.avif" 
                   alt="Wine" 
                   className="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl"
                   referrerPolicy="no-referrer"
@@ -202,7 +202,7 @@ const ServicesPage = () => {
                   <p className="text-sm font-medium">Viac ako 50 druhov archívnych vín v našej pivnici.</p>
                 </div>
                 <img 
-                  src="src\pics\food_slovak.jpg" 
+                  src="\pics\food_slovak.jpg" 
                   alt="Food" 
                   className="rounded-[2.5rem] h-80 w-full object-cover shadow-2xl"
                   referrerPolicy="no-referrer"
