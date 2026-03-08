@@ -22,7 +22,7 @@ const ContactForm = () => {
     const formDataToSend = new FormData();
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
-    formDataToSend.append('subject', formData.subject);
+    formDataToSend.append('eventType', formData.subject);
     formDataToSend.append('message', formData.message);
     try {
       const response = await fetch('https://api.hotelhradok.eu/mail.php', {
@@ -86,7 +86,7 @@ const ContactForm = () => {
             <label className="block text-sm font-bold text-forest-700 mb-2">Predmet</label>
             <input
               type="text"
-              name="subject"
+              name="eventType"
               value={formData.subject}
               onChange={handleChange}
               className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"

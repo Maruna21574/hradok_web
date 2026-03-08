@@ -69,26 +69,26 @@ const BookingPage = () => {
 
             <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100">
               <h3 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h3>
-              <form action="https://hotelhradok.eu/sub/api/mail.php" method="POST" onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://api.hotelhradok.eu/mail.php" method="POST" onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>
-                    <input required type="text" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                    <input required type="text" name="name" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Email</label>
-                    <input required type="email" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                    <input required type="email" name="email" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Telefón</label>
-                    <input required type="tel" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                    <input required type="tel" name="phone" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Typ podujatia</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50">
+                    <select name="eventType" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50">
                       <option>Svadba</option>
                       <option>Rodinná oslava</option>
                       <option>Firemná akcia / Teambuilding</option>
@@ -100,22 +100,22 @@ const BookingPage = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Dátum (od)</label>
-                    <input required type="date" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                    <input required type="date" name="dateFrom" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Dátum (do)</label>
-                    <input required type="date" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                    <input required type="date" name="dateTo" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-bold text-forest-700 mb-2">Predpokladaný počet hostí</label>
-                  <input required type="number" min="1" max="50" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
+                  <input required type="number" min="1" max="50" name="guests" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-bold text-forest-700 mb-2">Doplňujúce informácie</label>
-                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" placeholder="Špeciálne požiadavky, catering, program..."></textarea>
+                  <textarea rows={4} name="extraInfo" className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50" placeholder="Špeciálne požiadavky, catering, program..."></textarea>
                 </div>
 
                 <button type="submit" className="w-full bg-forest-600 text-white py-4 rounded-xl font-bold hover:bg-forest-700 transition-all shadow-lg shadow-forest-900/20">
