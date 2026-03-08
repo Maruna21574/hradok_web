@@ -22,6 +22,7 @@ const ContactForm = () => {
     formDataToSend.append('email', formData.email);
     formDataToSend.append('phone', formData.phone || '');
     formDataToSend.append('message', formData.message);
+    formDataToSend.append('extraInfo', formData.message);
     formDataToSend.append('eventType', 'kontakt');
     try {
       const response = await fetch('https://api.hotelhradok.eu/mail.php', {
