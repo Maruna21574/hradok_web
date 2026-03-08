@@ -9,6 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
+// Funkcia na logovanie
+function log_mail($msg) {
+    $logfile = __DIR__ . '/mail.log';
+    file_put_contents($logfile, date('c') . ' ' . $msg . "\n", FILE_APPEND);
+}
+
 // Rozlíš medzi JSON a multipart/form-data
 if (isset($_POST['name']) || isset($_FILES['attachments'])) {
     // multipart/form-data
@@ -64,6 +70,7 @@ if (isset($_POST['name']) || isset($_FILES['attachments'])) {
 }
 
 if (!$name || !$email || !$eventType) {
+    log_mail('ERROR: Chýbajú povinné údaje. name=' . $name . ' email=' . $email . ' eventType=' . $eventType);
     http_response_code(400);
     echo json_encode(['error' => 'Chýbajú povinné údaje.']);
     exit();
@@ -119,6 +126,9 @@ if ($isContact && file_exists('client-confirmation-contact.html')) {
     $clientBody = "Ďakujeme za váš dopyt, $name!\nVaša požiadavka bola prijatá.\n\nKópia vašej správy:\n$extraInfo";
 }
 
+// Loguj vstupné údaje
+log_mail('INPUT: name=' . $name . ' email=' . $email . ' phone=' . $phone . ' eventType=' . $eventType . ' dateFrom=' . $dateFrom . ' dateTo=' . $dateTo . ' guests=' . $guests . ' extraInfo=' . $extraInfo . ' hasAttachment=' . ($hasAttachment ? '1' : '0'));
+
 $adminMail = 'info@hotelhradok.eu';
 $from = "Hotel Hrádok <info@hotelhradok.eu>";
 
@@ -141,24 +151,35 @@ if ($hasAttachment) {
     }
     $body .= "--$boundary--";
     $subjectAdmin = '=?UTF-8?B?' . base64_encode("Nový dopyt z webu: $eventType") . '?=';
+    log_mail('ADMIN MAIL: subject=' . $subjectAdmin . ' headers=' . $headers);
     $sentAdmin = mail($adminMail, $subjectAdmin, $body, $headers);
+    log_mail('ADMIN MAIL SENT: ' . ($sentAdmin ? 'OK' : 'ERROR'));
 
     // Klientovi bez prílohy
     $headersClient = "MIME-Version: 1.0\r\n";
     $headersClient .= "Content-type: text/html; charset=UTF-8\r\n";
     $headersClient .= "From: $from\r\n";
     $subjectClient = '=?UTF-8?B?' . base64_encode("Potvrdenie prijatia dopytu | Hotel Hrádok") . '?=';
+    log_mail('CLIENT MAIL: subject=' . $subjectClient . ' headers=' . $headersClient);
     $sentClient = mail($email, $subjectClient, $clientBody, $headersClient);
+    log_mail('CLIENT MAIL SENT: ' . ($sentClient ? 'OK' : 'ERROR'));
 } else {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
     $headers .= "From: $from\r\n";
     $subjectAdmin = '=?UTF-8?B?' . base64_encode("Nový dopyt z webu: $eventType") . '?=';
     $subjectClient = '=?UTF-8?B?' . base64_encode("Potvrdenie prijatia dopytu | Hotel Hrádok") . '?=';
+    log_mail('ADMIN MAIL: subject=' . $subjectAdmin . ' headers=' . $headers);
     $sentAdmin = mail($adminMail, $subjectAdmin, $adminBody, $headers);
+    log_mail('ADMIN MAIL SENT: ' . ($sentAdmin ? 'OK' : 'ERROR'));
+    log_mail('CLIENT MAIL: subject=' . $subjectClient . ' headers=' . $headers);
     $sentClient = mail($email, $subjectClient, $clientBody, $headers);
+    log_mail('CLIENT MAIL SENT: ' . ($sentClient ? 'OK' : 'ERROR'));
 }
 
-file_put_contents('mail.log', date('c')." admin: ".($sentAdmin ? 'OK' : 'ERROR')." client: ".($sentClient ? 'OK' : 'ERROR')."\n", FILE_APPEND);
-
-echo json_encode(['success' => true]);
+// Výsledok loguj aj do odpovede
+echo json_encode([
+    'success' => true,
+    'adminMailSent' => $sentAdmin,
+    'clientMailSent' => $sentClient
+]);
