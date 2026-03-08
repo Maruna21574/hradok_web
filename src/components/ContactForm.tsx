@@ -5,12 +5,13 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    eventType: 'kontakt'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -22,6 +23,7 @@ const ContactForm = () => {
     formDataToSend.append('email', formData.email);
     formDataToSend.append('phone', formData.phone || '');
     formDataToSend.append('message', formData.message);
+    formDataToSend.append('eventType', formData.eventType || 'kontakt');
     try {
       const response = await fetch('https://api.hotelhradok.eu/mail.php', {
         method: 'POST',
@@ -103,6 +105,21 @@ const ContactForm = () => {
               placeholder="Sem napíšte vašu správu..."
               required
             ></textarea>
+          </div>
+          <div>
+            <label className="block text-sm font-bold text-forest-700 mb-2">Typ správy</label>
+            <select
+              name="eventType"
+              value={formData.eventType}
+              onChange={handleChange}
+              className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
+              required
+            >
+              <option value="kontakt">Kontakt</option>
+              <option value="rezervacia">Rezervácia</option>
+              <option value="otazka">Otázka</option>
+              <option value="ine">Iné</option>
+            </select>
           </div>
           <button
             type="submit"
