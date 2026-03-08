@@ -1,18 +1,15 @@
-
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            <div>
+              <label className="block text-sm font-bold text-forest-700 mb-2">Telefónne číslo</label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone || ''}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:outline-none focus:ring-2 focus:ring-forest-500 bg-forest-50"
+                required
+                placeholder="0901 234 567"
+              />
+            </div>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
