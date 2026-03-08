@@ -4,10 +4,32 @@ import { Calendar, Users, Building2, Wine, Star, CheckCircle2 } from 'lucide-rea
 
 const BookingPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    try {
+      const response = await fetch('https://api.hotelhradok.eu/mail.php', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        setIsSubmitting(false);
+        setError(result && result.error ? 'Chyba: ' + result.error : 'Chyba pri odoslaní dopytu.');
+        return;
+      }
+      setIsSubmitting(false);
+      setSubmitted(true);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError((err as any).message || 'Chyba pri odoslaní.');
+    }
   };
 
   if (submitted) {
@@ -69,7 +91,8 @@ const BookingPage = () => {
 
             <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100">
               <h3 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h3>
-              <form action="https://api.hotelhradok.eu/mail.php" method="POST" onSubmit={handleSubmit} className="space-y-6">
+              {error && <div className="text-red-600 mb-4 font-bold">{error}</div>}
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>
