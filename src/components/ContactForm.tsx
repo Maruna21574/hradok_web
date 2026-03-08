@@ -29,7 +29,12 @@ const ContactForm = () => {
         method: 'POST',
         body: formDataToSend
       });
-      if (!response.ok) throw new Error('Chyba pri odoslaní dopytu.');
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        setIsSubmitting(false);
+        alert(result && result.error ? 'Chyba: ' + result.error : 'Chyba pri odoslaní dopytu.');
+        return;
+      }
       setIsSubmitting(false);
       setSubmitted(true);
     } catch (err) {
