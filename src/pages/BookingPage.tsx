@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'motion/react';
 import { Calendar, Users, Building2, Wine, Star, CheckCircle2 } from 'lucide-react';
 
@@ -46,6 +47,21 @@ const BookingPage = () => {
           <h2 className="text-3xl font-serif font-bold text-forest-950 mb-4">Dopyt odoslaný!</h2>
           <p className="text-forest-700 mb-8 leading-relaxed">
             Ďakujeme za váš záujem o rezerváciu hotela Hrádok. Naši kolegovia vás budú kontaktovať v priebehu 24 hodín s cenovou ponukou.
+              <Helmet>
+                <title>Rezervácia – Hotel Hrádok</title>
+                <meta name="description" content="Rezervujte si exkluzívny prenájom hotela Hrádok pre svadby, oslavy, firemné akcie a teambuilding v Malej Fatre. Súkromie, komfort, zážitky." />
+                <meta name="keywords" content="rezervácia, hotel hrádok, svadba, firemná akcia, prenájom, Malá Fatra, ubytovanie, event, teambuilding, oslavy, hotel Bystrička, hotel Turiec, hotel Martin, hotel Žilina" />
+                <meta property="og:title" content="Rezervácia – Hotel Hrádok" />
+                <meta property="og:description" content="Rezervujte si exkluzívny prenájom hotela Hrádok pre svadby, oslavy, firemné akcie a teambuilding v Malej Fatre. Súkromie, komfort, zážitky." />
+                <meta property="og:image" content="/pics/hradok_den.webp" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://hotelhradok.eu/rezervacia" />
+                <meta property="og:locale" content="sk_SK" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Rezervácia – Hotel Hrádok" />
+                <meta name="twitter:description" content="Rezervujte si exkluzívny prenájom hotela Hrádok pre svadby, oslavy, firemné akcie a teambuilding v Malej Fatre. Súkromie, komfort, zážitky." />
+                <meta name="twitter:image" content="/pics/hradok_den.webp" />
+              </Helmet>
           </p>
           <button 
             onClick={() => window.location.href = '/'}

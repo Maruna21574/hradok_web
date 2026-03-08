@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Trees, Clock, Building2, Users, ChevronRight } from 'lucide-react';
@@ -135,39 +136,56 @@ const AboutPreview = () => {
 
 const HomePage = () => {
   return (
-    <div>
-      <Hero />
-      <AboutPreview />
-      <ServicesSection />
-      <section className="section-padding bg-forest-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-serif font-bold text-forest-950 mb-6">Máte záujem o prenájom?</h2>
-              <p className="text-forest-800 text-lg leading-relaxed mb-8">
-                Či už plánujete svadbu, firemnú akciu alebo rodinnú oslavu, sme tu, aby sme vám pomohli s každým detailom. Vyplňte formulár a my sa vám ozveme s nezáväznou ponukou.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-forest-700">
-                  <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
-                    <Users className="w-5 h-5" />
+    <>
+      <Helmet>
+        <title>Hotel Hrádok – Súkromné akcie v prírode</title>
+        <meta name="description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta name="keywords" content="hotel hrádok, hotel bystrička, svadba, oslava, firemná akcia, ubytovanie, Turiec, Malá Fatra, príroda, prenájom, event, catering, wellness, teambuilding, rodinná dovolenka, svadobný hotel, firemné školenie, detský tábor, exkluzívny prenájom, súkromie, horský hotel, hotel v prírode, hotel Slovensko, hotel Turiec, hotel Malá Fatra, hotel Martin, hotel Žilina, wellness hotel, hotel s cateringom, hotel s wellnessom, hotel pre skupiny, hotel pre firmy, hotel pre svadby, hotel pre oslavy, hotel pre deti" />
+        <meta property="og:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
+        <meta property="og:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta property="og:image" content="/pics/hradok_den.webp" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hotelhradok.eu" />
+        <meta property="og:locale" content="sk_SK" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
+        <meta name="twitter:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta name="twitter:image" content="/pics/hradok_den.webp" />
+      </Helmet>
+      <div>
+        <Hero />
+        <AboutPreview />
+        <ServicesSection />
+        <section className="section-padding bg-forest-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="text-4xl font-serif font-bold text-forest-950 mb-6">Máte záujem o prenájom?</h2>
+                <p className="text-forest-800 text-lg leading-relaxed mb-8">
+                  Či už plánujete svadbu, firemnú akciu alebo rodinnú oslavu, sme tu, aby sme vám pomohli s každým detailom. Vyplňte formulár a my sa vám ozveme s nezáväznou ponukou.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-forest-700">
+                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <span>Individuálny prístup</span>
                   </div>
-                  <span>Individuálny prístup</span>
-                </div>
-                <div className="flex items-center gap-3 text-forest-700">
-                  <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
-                    <Building2 className="w-5 h-5" />
+                  <div className="flex items-center gap-3 text-forest-700">
+                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <span>Kompletné zázemie</span>
                   </div>
-                  <span>Kompletné zázemie</span>
                 </div>
               </div>
+              <ContactForm />
             </div>
-            <ContactForm />
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
-};
+}
 
 export default HomePage;
