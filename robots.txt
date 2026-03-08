@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://hotelhradok.eu/sitemap.xml
+
+# SEO kľúčové slová:
+# hotel hrádok, hotel bystrička, hotel pri Martine, hotel Turiec, hotel Turčianske Teplice, svadby v prírode, svadobný hotel, rodinné oslavy, firemné akcie, detské tábory, ubytovanie Turiec, wellness hotel, event hotel, catering, príroda, Malá Fatra, exkluzívny prenájom, zážitky, komfort, súkromie

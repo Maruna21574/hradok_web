@@ -66,8 +66,9 @@ const BookingPage = () => {
             <div>
               <span className="text-forest-600 font-bold tracking-widest uppercase text-sm mb-4 block">Rezervácia objektu</span>
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-forest-950 mb-8 leading-tight">
-                Naplánujte si svoju akciu u nás
+                Hotel Hrádok – Rezervácia termínu, svadby, oslavy, firemné akcie
               </h1>
+              <h2 className="text-3xl font-serif font-bold text-forest-900 mb-6">Naplánujte si svoju akciu u nás</h2>
               <p className="text-forest-700 text-lg mb-12 leading-relaxed">
                 Vyplňte prosím nezáväzný rezervačný formulár. Náš tím sa vám ozve, aby sme doladili všetky detaily vašej svadby, oslavy alebo firemného podujatia.
               </p>
@@ -90,7 +91,7 @@ const BookingPage = () => {
             </div>
 
             <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100">
-              <h3 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h3>
+              <h2 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h2>
               {error && <div className="text-red-600 mb-4 font-bold">{error}</div>}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
