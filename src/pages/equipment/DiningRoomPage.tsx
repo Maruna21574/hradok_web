@@ -22,7 +22,8 @@ const EquipmentDiningRoomPage = () => {
     <>
       <Helmet>
         <title>Jedáleň – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Jedáleň v hoteli Hrádok – priestranná miestnosť na spoločné stolovanie a raňajky." />
+        <meta name="description" content="Jedáleň v hoteli Hrádok – priestranná miestnosť na spoločné stolovanie, raňajky, večere, skupiny, rodiny, Malá Fatra." />
+        <meta name="keywords" content="jedáleň, hotel hrádok, spoločné stolovanie, raňajky, večere, skupiny, rodiny, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre rodiny" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

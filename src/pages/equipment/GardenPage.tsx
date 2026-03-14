@@ -17,7 +17,8 @@ const EquipmentGardenPage = () => {
     <>
       <Helmet>
         <title>Záhrada a gril – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Vonkajšia záhrada s grilom v hoteli Hrádok – rozľahlá záhrada s grilom, posedením a priestorom na hry a oddych." />
+        <meta name="description" content="Vonkajšia záhrada s grilom v hoteli Hrádok – posedenie, hry, oddych, letné večery, rodinné oslavy, firemné akcie, Malá Fatra." />
+        <meta name="keywords" content="záhrada, gril, hotel hrádok, posedenie, hry, oddych, letné večery, rodinné oslavy, firemné akcie, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

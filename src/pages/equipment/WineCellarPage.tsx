@@ -13,7 +13,8 @@ const EquipmentWineCellarPage = () => {
     <>
       <Helmet>
         <title>Vináreň – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Vináreň v hoteli Hrádok – atmosférická vináreň vhodná na večerné posedenia alebo ochutnávky." />
+        <meta name="description" content="Vináreň v hoteli Hrádok – atmosférická vináreň, večerné posedenia, ochutnávky vín, Malá Fatra, Bystrička." />
+        <meta name="keywords" content="vináreň, hotel hrádok, atmosféra, večerné posedenia, ochutnávky vín, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre oslavy" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

@@ -31,7 +31,8 @@ const EquipmentAccommodationPage = () => {
     <>
       <Helmet>
         <title>Ubytovanie – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Ubytovanie v hoteli Hrádok – komfortné izby, apartmány a spoločné priestory pre váš pobyt." />
+        <meta name="description" content="Ubytovanie v hoteli Hrádok – komfortné izby, apartmány, spoločné priestory, rodiny, skupiny, firemné akcie, Malá Fatra." />
+        <meta name="keywords" content="ubytovanie, hotel hrádok, izby, apartmány, spoločné priestory, rodiny, skupiny, firemné akcie, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre rodiny" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

@@ -89,9 +89,9 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>O nás – Hotel Hrádok</title>
-        <meta name="description" content="Hotel Hrádok – tradícia, moderný komfort, exkluzívny prenájom v Malej Fatre. Súkromie, rodinný prístup, horské prostredie." />
-        <meta name="keywords" content="o nás, hotel hrádok, história, tradícia, Malá Fatra, Bystrička, exkluzívny prenájom, rodinný hotel, horský hotel, hotel Turiec, hotel Martin, hotel Žilina" />
+        <title>O nás – Hotel Hrádok | Tradícia, rodinný hotel, Malá Fatra</title>
+        <meta name="description" content="Hotel Hrádok – rodinný hotel v Malej Fatre. Tradícia, exkluzívny prenájom, súkromie, moderný komfort, história, Bystrička, Turiec, Martin, Žilina." />
+        <meta name="keywords" content="hotel hrádok, o nás, história hotela, rodinný hotel, tradícia, Malá Fatra, Bystrička, exkluzívny prenájom, hotel Turiec, hotel Martin, hotel Žilina, horský hotel, súkromie, komfort, hotel pre skupiny, hotel pre rodiny, hotel Slovensko" />
         <meta property="og:title" content="O nás – Hotel Hrádok" />
         <meta property="og:description" content="Hotel Hrádok – tradícia, moderný komfort, exkluzívny prenájom v Malej Fatre. Súkromie, rodinný prístup, horské prostredie." />
         <meta property="og:image" content="/pics/hradok_den.webp" />

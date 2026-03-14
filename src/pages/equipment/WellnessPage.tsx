@@ -26,7 +26,8 @@ const EquipmentWellnessPage = () => {
     <>
       <Helmet>
         <title>Wellness – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Wellness v hoteli Hrádok – oddychová zóna s vírivkou a saunou pre dokonalý relax počas pobytu." />
+        <meta name="description" content="Wellness v hoteli Hrádok – vírivka, sauna, relax, oddych, súkromie, regenerácia, Malá Fatra, Bystrička." />
+        <meta name="keywords" content="wellness, hotel hrádok, vírivka, sauna, relax, oddych, súkromie, regenerácia, hotel Malá Fatra, hotel Bystrička, wellness hotel, hotel pre skupiny" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

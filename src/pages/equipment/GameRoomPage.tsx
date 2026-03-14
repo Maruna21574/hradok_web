@@ -23,7 +23,8 @@ const EquipmentGameRoomPage = () => {
     <>
       <Helmet>
         <title>Herňa – Vybavenie | Hotel Hrádok</title>
-        <meta name="description" content="Herňa v hoteli Hrádok – spoločenská miestnosť s biliardom, šípkami a stolným tenisom pre zábavu všetkých vekových kategórií." />
+        <meta name="description" content="Herňa v hoteli Hrádok – biliard, šípky, pingpong, spoločenská miestnosť, zábava, turnaje, Malá Fatra, Bystrička." />
+        <meta name="keywords" content="herňa, hotel hrádok, biliard, šípky, pingpong, spoločenská miestnosť, zábava, turnaje, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre deti" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">

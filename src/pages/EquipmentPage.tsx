@@ -58,8 +58,9 @@ const EquipmentPage = () => {
   return (
     <>
       <Helmet>
-        <title>Vybavenie – Hotel Hrádok</title>
-        <meta name="description" content="Kompletné vybavenie hotela Hrádok: wellness, detský kútik, kuchyňa, bar, herňa, záhrada s grilom, vináreň a ďalšie." />
+        <title>Vybavenie – Hotel Hrádok | Wellness, bar, kuchyňa, herňa, záhrada, vináreň</title>
+        <meta name="description" content="Kompletné vybavenie hotela Hrádok: wellness, detský kútik, kuchyňa, bar, herňa, záhrada s grilom, vináreň, jedáleň, ubytovanie. Súkromie, komfort, Malá Fatra, Bystrička." />
+        <meta name="keywords" content="vybavenie hotel hrádok, wellness hotel, detský kútik, kuchyňa hotel, bar hotel, herňa hotel, záhrada s grilom, vináreň, jedáleň, ubytovanie, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre rodiny, hotel Slovensko, komfort, súkromie" />
       </Helmet>
       <div className="pt-42 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
