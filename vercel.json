@@ -2,10 +2,6 @@
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/index.htm", "destination": "/", "permanent": true },
-    { "source": "/", "destination": "/index.html", "has": [{"type": "header", "key": "accept", "value": ".*text/html.*"}] }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/index.htm", "destination": "/", "permanent": true }
   ]
 }
