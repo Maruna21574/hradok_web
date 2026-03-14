@@ -1,9 +1,12 @@
 import React from 'react';
+// import CookieConsent from 'react-cookie-consent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import GDPRPage from './pages/GDPRPage';
+import CookiesPage from './pages/CookiesPage';
 import ServicesPage from './pages/ServicesPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
@@ -45,6 +48,8 @@ export default function App() {
             <Route path="/vybavenie/restaurant" element={<EquipmentDiningRoomPage />} />
             <Route path="/vybavenie/jedalen" element={<EquipmentDiningRoomPage />} />
             <Route path="/vybavenie/ubytovanie" element={<EquipmentAccommodationPage />} />
+            <Route path="/gdpr" element={<GDPRPage />} />
+            <Route path="/cookies" element={<CookiesPage />} />
           </Routes>
         </main>
         <Footer />
