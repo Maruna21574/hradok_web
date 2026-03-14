@@ -22,7 +22,7 @@ const EquipmentKidsCornerPage = () => {
         <meta name="description" content="Detský kútik v hoteli Hrádok – bezpečný a hravý priestor pre najmenších hostí s množstvom hračiek a hier." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Detský kútik</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Bezpečný a hravý priestor pre najmenších hostí s množstvom hračiek, hier a kreatívnych aktivít. Ideálne miesto pre deti počas rodinných osláv, svadieb či firemných akcií.

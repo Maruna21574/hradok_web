@@ -16,7 +16,7 @@ const EquipmentWineCellarPage = () => {
         <meta name="description" content="Vináreň v hoteli Hrádok – atmosférická vináreň vhodná na večerné posedenia alebo ochutnávky." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Vináreň</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Atmosférická vináreň vhodná na večerné posedenia alebo ochutnávky vín. Ideálne miesto na neformálne rozhovory a zážitky.

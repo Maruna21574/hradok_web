@@ -17,7 +17,7 @@ const EquipmentKitchenPage = () => {
         <meta name="description" content="Kuchyňa v hoteli Hrádok – plne vybavená kuchyňa na prípravu vlastných jedál alebo catering." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Kuchyňa</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Plne vybavená kuchyňa na prípravu vlastných jedál alebo catering. K dispozícii sú všetky potrebné spotrebiče a riad.

@@ -18,7 +18,7 @@ const EquipmentBarPage = () => {
         <meta name="description" content="Bar v hoteli Hrádok – štýlový bar s možnosťou vlastného občerstvenia alebo obsluhy." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Bar</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Štýlový bar s možnosťou vlastného občerstvenia alebo obsluhy. Ideálne miesto na večerné posedenia a oslavy.

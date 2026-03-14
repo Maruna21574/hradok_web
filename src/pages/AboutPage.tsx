@@ -1,10 +1,91 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Trees, Clock, Mountain, ShieldCheck, Heart, Coffee } from 'lucide-react';
 
 const AboutPage = () => {
+  const [equipment, setEquipment] = useState([
+    {
+      title: 'Detský kútik',
+      desc: 'Bezpečný a hravý priestor pre najmenších hostí s množstvom hračiek, hier a kreatívnych aktivít. Ideálne miesto pre deti počas rodinných osláv, svadieb či firemných akcií.',
+      image: '/pics/detsky_kutik/AttelierKay..-1.webp',
+      link: '/vybavenie/detsky-kutik',
+    },
+    {
+      title: 'Wellness',
+      desc: 'Oddychová zóna s vírivkou a saunou pre dokonalý relax počas pobytu. Ideálne miesto na regeneráciu po turistike alebo športových aktivitách.',
+      image: '/pics/welness/AttelierKay..-13.webp',
+      link: '/vybavenie/wellness',
+    },
+    {
+      title: 'Kuchyňa',
+      desc: 'Plne vybavená kuchyňa na prípravu vlastných jedál alebo catering. K dispozícii sú všetky potrebné spotrebiče a riad.',
+      image: '/pics/kuchyna/AttelierKay..-39.webp',
+      link: '/vybavenie/kuchyna',
+    },
+    {
+      title: 'Bar',
+      desc: 'Štýlový bar s možnosťou vlastného občerstvenia alebo obsluhy. Ideálne miesto na večerné posedenia a oslavy.',
+      image: '/pics/bar/AttelierKay..-35.webp',
+      link: '/vybavenie/bar',
+    },
+    {
+      title: 'Herňa (biliard, šípky, pingpong)',
+      desc: 'Spoločenská miestnosť s biliardom, šípkami a stolným tenisom pre zábavu všetkých vekových kategórií. Ideálne na večerné posedenia alebo turnaje.',
+      image: '/pics/herna/AttelierKay..-56.webp',
+      link: '/vybavenie/herna',
+    },
+    {
+      title: 'Vonkajšia záhrada a gril',
+      desc: 'Rozľahlá záhrada s grilom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.',
+      image: '/pics/vonkajsia_zahrada/AttelierKay..-92.webp',
+      link: '/vybavenie/zahrada-gril',
+    },
+    {
+      title: 'Jedáleň',
+      desc: 'Priestranná jedáleň na spoločné stolovanie, raňajky a večere. Ideálne miesto pre väčšie skupiny aj rodiny.',
+      image: '/pics/jedalen/AttelierKay..-24.webp',
+      link: '/vybavenie/jedalen',
+    },
+    {
+      title: 'Ubytovanie',
+      desc: 'Komfortné izby, apartmány a spoločné priestory pre váš pobyt. Vhodné pre rodiny, skupiny aj firemné akcie.',
+      image: '/pics/ubytovanie/AttelierKay..-64.webp',
+      link: '/vybavenie/ubytovanie',
+    },
+  ]);
+
+  const [carouselIdx, setCarouselIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const carouselTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  // Autoplay effect
+  useEffect(() => {
+    if (carouselTimeout.current) clearTimeout(carouselTimeout.current);
+    carouselTimeout.current = setTimeout(() => {
+      setCarouselIdx(i => (i + 1) % equipment.length);
+    }, 4000);
+    return () => {
+      if (carouselTimeout.current) clearTimeout(carouselTimeout.current);
+    };
+  }, [carouselIdx, equipment.length]);
+
+  // Responsive: detect mobile
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Dynamically calculate max height for all boxes
+  const boxHeights = equipment.map(item => {
+    // Estimate height based on text length (fallback for SSR)
+    return 420 + Math.max(0, item.desc.length - 120) * 0.7;
+  });
+  const maxBoxHeight = Math.max(...boxHeights, 440);
+
   return (
     <>
       <Helmet>
@@ -74,7 +155,7 @@ const AboutPage = () => {
               ].map((item, idx) => (
                 <div key={idx} className="p-10 bg-forest-50 rounded-3xl border border-forest-100 hover:shadow-lg transition-all">
                   <div className="text-forest-600 mb-6">{item.icon}</div>
-                  <h3 className="text-2xl font-serif font-bold text-forest-900 mb-4">{item.title}</h3>
+                  <h3 className="text-2xl font-bold font-serif text-forest-900 mb-4">{item.title}</h3>
                   <p className="text-forest-700 leading-relaxed">{item.desc}</p>
                 </div>
               ))}

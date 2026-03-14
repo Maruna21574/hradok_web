@@ -25,7 +25,7 @@ const EquipmentDiningRoomPage = () => {
         <meta name="description" content="Jedáleň v hoteli Hrádok – priestranná miestnosť na spoločné stolovanie a raňajky." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Jedáleň</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Priestranná jedáleň na spoločné stolovanie, raňajky a večere. Ideálne miesto pre väčšie skupiny aj rodiny.

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import InquirySection from '../components/InquirySection';
 
 const equipment = [
   {
@@ -60,7 +61,7 @@ const EquipmentPage = () => {
         <title>Vybavenie – Hotel Hrádok</title>
         <meta name="description" content="Kompletné vybavenie hotela Hrádok: wellness, detský kútik, kuchyňa, bar, herňa, záhrada s grilom, vináreň a ďalšie." />
       </Helmet>
-      <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
+      <div className="pt-42 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-5xl font-serif font-bold text-forest-950 mb-10 text-center">Vybavenie objektu</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -77,6 +78,9 @@ const EquipmentPage = () => {
                 <span className="mt-2 text-forest-500 font-semibold group-hover:underline">Zobraziť viac</span>
               </Link>
             ))}
+          </div>
+          <div className="mt-20">
+            <InquirySection />
           </div>
         </div>
       </div>

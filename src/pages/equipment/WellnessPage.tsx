@@ -29,7 +29,7 @@ const EquipmentWellnessPage = () => {
         <meta name="description" content="Wellness v hoteli Hrádok – oddychová zóna s vírivkou a saunou pre dokonalý relax počas pobytu." />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Wellness</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Doprajte si dokonalý relax v našom wellness centre. Čaká na vás moderná vírivka, fínska sauna a oddychová zóna s ležadlami. Wellness je ideálny na regeneráciu po turistike, športových aktivitách alebo ako súčasť súkromnej oslavy. Vychutnajte si súkromie a pokoj len pre vašu skupinu.
