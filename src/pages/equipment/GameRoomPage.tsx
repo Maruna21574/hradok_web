@@ -24,7 +24,7 @@ const EquipmentGameRoomPage = () => {
       <Helmet>
         <title>Herňa – Vybavenie | Hotel Hrádok</title>
         <meta name="description" content="Herňa v hoteli Hrádok – biliard, šípky, pingpong, spoločenská miestnosť, zábava, turnaje, Malá Fatra, Bystrička." />
-        <meta name="keywords" content="herňa, hotel hrádok, biliard, šípky, pingpong, spoločenská miestnosť, zábava, turnaje, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre deti" />
+        <meta name="keywords" content="herňa, hotel hrádok, biliard, šípky, pingpong, spoločenská miestnosť, zábava, turnaje, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre deti, hotel Slovensko, hotel pre eventy, hotel pre svadby, hotel pre oslavy, hotel pre firemné akcie, hotel pre rodinné akcie, hotel pre veľké skupiny, hotel pre menšie skupiny, hotel s kuchyňou, hotel s barom, hotel s vinárňou, hotel s herňou, hotel s wellnessom, hotel s grilom, hotel s detským kútikom, hotel s parkovaním, hotel s wifi, hotel s raňajkami, hotel s polpenziou, hotel s plnou penziou, hotel s domácimi zvieratami, hotel s výhľadom, hotel s terasou, hotel s balkónom, hotel s veľkou záhradou, hotel s grilom, hotel s ohniskom, hotel s detským ihriskom, hotel s bazénom, hotel s vírivkou, hotel s fínskou saunou, hotel s relax zónou, hotel s konferenčnou miestnosťou, hotel s projektorom, hotel s ozvučením, hotel s klimatizáciou, hotel s úschovňou bicyklov, hotel s lyžiarňou, hotel s recepciou, hotel s barom, hotel s reštauráciou, hotel s vinárňou, hotel s herňou, hotel s detským kútikom, hotel s wellnessom, hotel s kuchyňou, hotel s jedálňou, hotel s grilom" />
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">
