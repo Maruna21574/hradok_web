@@ -23,6 +23,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Domov', href: '/' },
     { name: 'O nás', href: '/o-nas' },
+    { name: 'Vybavenie', href: '/vybavenie' },
     { name: 'Služby', href: '/sluzby' },
     { name: 'Lokalita', href: '/lokalita' },
     { name: 'Kontakt', href: '/kontakt' },

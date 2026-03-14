@@ -9,6 +9,16 @@ import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import BookingPage from './pages/BookingPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
+import EquipmentPage from './pages/EquipmentPage';
+import EquipmentKidsCornerPage from './pages/equipment/KidsCornerPage';
+import EquipmentWellnessPage from './pages/equipment/WellnessPage';
+import EquipmentKitchenPage from './pages/equipment/KitchenPage';
+import EquipmentBarPage from './pages/equipment/BarPage';
+import EquipmentGameRoomPage from './pages/equipment/GameRoomPage';
+import EquipmentGardenPage from './pages/equipment/GardenPage';
+import EquipmentWineCellarPage from './pages/equipment/WineCellarPage';
+import EquipmentDiningRoomPage from './pages/equipment/DiningRoomPage';
+import EquipmentAccommodationPage from './pages/equipment/AccommodationPage';
 
 export default function App() {
   return (
@@ -24,6 +34,17 @@ export default function App() {
             <Route path="/lokalita" element={<LocationPage />} />
             <Route path="/kontakt" element={<ContactPage />} />
             <Route path="/rezervacia" element={<BookingPage />} />
+            <Route path="/vybavenie" element={<EquipmentPage />} />
+            <Route path="/vybavenie/detsky-kutik" element={<EquipmentKidsCornerPage />} />
+            <Route path="/vybavenie/wellness" element={<EquipmentWellnessPage />} />
+            <Route path="/vybavenie/kuchyna" element={<EquipmentKitchenPage />} />
+            <Route path="/vybavenie/bar" element={<EquipmentBarPage />} />
+            <Route path="/vybavenie/herna" element={<EquipmentGameRoomPage />} />
+            <Route path="/vybavenie/zahrada-gril" element={<EquipmentGardenPage />} />
+            <Route path="/vybavenie/vinaren" element={<EquipmentWineCellarPage />} />
+            <Route path="/vybavenie/restaurant" element={<EquipmentDiningRoomPage />} />
+            <Route path="/vybavenie/jedalen" element={<EquipmentDiningRoomPage />} />
+            <Route path="/vybavenie/ubytovanie" element={<EquipmentAccommodationPage />} />
           </Routes>
         </main>
         <Footer />
