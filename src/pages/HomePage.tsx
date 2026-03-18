@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Trees, Clock, Building2, Users, ChevronRight } from 'lucide-react';
 import ServicesSection from '../components/ServicesSection';
 import ContactForm from '../components/ContactForm';
+import CapacityInfo from '../components/CapacityInfo';
 
 const Hero = () => {
   return (
@@ -40,6 +41,9 @@ const Hero = () => {
             </Link>
             <Link to="/sluzby" className="w-full sm:w-auto bg-transparent border border-white/40 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all text-center">
               Naše služby
+            </Link>
+            <Link to="/vybavenie" className="w-full sm:w-auto bg-forest-300 text-forest-950 px-8 py-4 rounded-full font-bold text-lg hover:bg-forest-200 transition-all text-center">
+              Vybavenie
             </Link>
           </div>
         </motion.div>
@@ -155,6 +159,7 @@ const HomePage = () => {
       <div>
         <Hero />
         <AboutPreview />
+        <CapacityInfo />
         <ServicesSection />
         <section className="section-padding bg-forest-50">
           <div className="max-w-7xl mx-auto">

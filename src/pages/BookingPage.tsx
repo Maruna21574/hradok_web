@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'motion/react';
-import { Calendar, Users, Building2, Wine, Star, CheckCircle2 } from 'lucide-react';
+import { Calendar, Users, Building2, Wine, Star, CheckCircle2, Mail, Phone } from 'lucide-react';
 
 const BookingPage = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -82,7 +82,7 @@ const BookingPage = () => {
             <div>
               <span className="text-forest-600 font-bold tracking-widest uppercase text-sm mb-4 block">Rezervácia objektu</span>
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-forest-950 mb-8 leading-tight">
-                Hotel Hrádok – Rezervácia termínu, svadby, oslavy, firemné akcie
+                Hotel Hrádok – Rezervácia termínu
               </h1>
               <h2 className="text-3xl font-serif font-bold text-forest-900 mb-6">Naplánujte si svoju akciu u nás</h2>
               <p className="text-forest-700 text-lg mb-12 leading-relaxed">
@@ -104,9 +104,28 @@ const BookingPage = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Kontakt info block */}
+              <div className="mt-8 mb-8">
+                <div className="font-bold text-forest-900 uppercase tracking-wide text-sm mb-3">Kontakt</div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3 text-forest-800">
+                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <a href="tel:+421905500950" className="hover:underline text-forest-700 font-medium">+421 905 500 950</a>
+                  </div>
+                  <div className="flex items-center gap-3 text-forest-800">
+                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <a href="mailto:info@hotelhradok.eu" className="hover:underline text-forest-700 font-medium">info@hotelhradok.eu</a>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100">
+            <div className="bg-white p-10 rounded-3xl shadow-xl border border-forest-100 h-fit">
               <h2 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h2>
               {error && <div className="text-red-600 mb-4 font-bold">{error}</div>}
               <form onSubmit={handleSubmit} className="space-y-6">

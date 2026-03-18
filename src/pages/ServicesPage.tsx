@@ -15,7 +15,7 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl"
           >
-            <span className="text-forest-600 font-bold tracking-[0.2em] uppercase text-xs mb-6 block">Naše portfólio</span>
+            <span className="text-forest-600 font-bold tracking-[0.2em] uppercase text-xs mb-6 block">Naše služby</span>
             <h1 className="text-6xl md:text-8xl font-serif font-bold text-forest-950 mb-10 leading-[0.9] tracking-tighter">
               Služby na mieru <br />
               <span className="italic text-forest-600">vašim potrebám</span>

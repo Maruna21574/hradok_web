@@ -39,7 +39,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-bold text-forest-900 text-xl">Telefón</p>
-                    <p className="text-forest-700 text-lg">+421 900 000 000</p>
+                    <a href="tel:+421905500950" className="text-forest-700 text-lg hover:underline">+421 905 500 950</a>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-bold text-forest-900 text-xl">Email</p>
-                    <p className="text-forest-700 text-lg">info@hotelhradok.sk</p>
+                    <a href="mailto:info@hotelhradok.eu" className="text-forest-700 text-lg hover:underline">info@hotelhradok.eu</a>
                   </div>
                 </div>
               </div>

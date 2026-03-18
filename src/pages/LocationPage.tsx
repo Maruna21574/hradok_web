@@ -34,7 +34,7 @@ const LocationPage = () => {
 
           <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] relative">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20893.34241512345!2d18.8654321!3d49.0345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714f96896896896%3A0x6896896896896896!2sBystri%C4%8Dka!5e0!3m2!1ssk!2ssk!4v1622313659700!5m2!1ssk!2ssk" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5406.456307004734!2d18.86432641356982!3d49.05414977123986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714f979c8b573c5%3A0xca98b403f2cd60ed!2zSG9yc2vDvSBob3RlbCBIcsOhZG9r!5e1!3m2!1ssk!2ssk!4v1773862518929!5m2!1ssk!2ssk" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

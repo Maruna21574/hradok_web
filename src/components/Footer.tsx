@@ -17,6 +17,10 @@ const Footer = () => {
             <span className="text-base text-white/70 mt-1 max-w-xs text-center md:text-left">
               Súkromný horský rezort pre vaše akcie, svadby a firemné pobyty v Malej Fatre.
             </span>
+            <div className="flex flex-col gap-1 mt-2 text-white/80 text-sm">
+              <a href="tel:+421905123456" className="hover:text-white transition-colors">+421 905 123 456</a>
+              <a href="mailto:info@hotelhradok.eu" className="hover:text-white transition-colors">info@hotelhradok.eu</a>
+            </div>
           </div>
           {/* Center: Menu */}
           <div className="flex flex-col items-center mb-8 md:mb-0">
