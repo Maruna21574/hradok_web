@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Trees, Clock, Building2, Users, ChevronRight } from 'lucide-react';
@@ -155,40 +155,83 @@ const HomePage = () => {
         <meta name="twitter:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
         <meta name="twitter:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
         <meta name="twitter:image" content="/pics/hradok_den.webp" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Hotel",
+              "name": "Hotel Hrádok",
+              "image": "https://hotelhradok.eu/pics/hradok_den.webp",
+              "@id": "https://hotelhradok.eu",
+              "url": "https://hotelhradok.eu",
+              "telephone": "+421 905 123 456",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Hrádok 1",
+                "addressLocality": "Bystrička",
+                "postalCode": "038 04",
+                "addressCountry": "SK"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.054,
+                "longitude": 18.945
+              },
+              "priceRange": "€€",
+              "description": "Exkluzívny prenájom hotela Hrádok pre svadby, firemné akcie, rodinné oslavy a detské tábory v srdci Malej Fatry.",
+              "amenityFeature": [
+                {"@type": "LocationFeatureSpecification", "name": "Wellness", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Vináreň", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Catering", "value": true},
+                {"@type": "LocationFeatureSpecification", "name": "Súkromie", "value": true}
+              ]
+            }
+          `}
+        </script>
       </Helmet>
-      <div>
-        <Hero />
-        <AboutPreview />
-        <CapacityInfo />
-        <ServicesSection />
-        <section className="section-padding bg-forest-50">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-4xl font-serif font-bold text-forest-950 mb-6">Máte záujem o prenájom?</h2>
-                <p className="text-forest-800 text-lg leading-relaxed mb-8">
-                  Či už plánujete svadbu, firemnú akciu alebo rodinnú oslavu, sme tu, aby sme vám pomohli s každým detailom. Vyplňte formulár a my sa vám ozveme s nezáväznou ponukou.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-forest-700">
-                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
-                      <Users className="w-5 h-5" />
+      <>
+        <header>
+          <nav>
+            {/* Prípadne sem môžeš vložiť Navbar komponent ak existuje */}
+          </nav>
+        </header>
+        <main>
+          <Hero />
+          <AboutPreview />
+          <CapacityInfo />
+          <ServicesSection />
+          <section className="section-padding bg-forest-50">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <article>
+                  <h2 className="text-4xl font-serif font-bold text-forest-950 mb-6">Máte záujem o prenájom?</h2>
+                  <p className="text-forest-800 text-lg leading-relaxed mb-8">
+                    Či už plánujete svadbu, firemnú akciu alebo rodinnú oslavu, sme tu, aby sme vám pomohli s každým detailom. Vyplňte formulár a my sa vám ozveme s nezáväznou ponukou.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-forest-700">
+                      <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                        <Users className="w-5 h-5" />
+                      </div>
+                      <span>Individuálny prístup</span>
                     </div>
-                    <span>Individuálny prístup</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-forest-700">
-                    <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
-                      <Building2 className="w-5 h-5" />
+                    <div className="flex items-center gap-3 text-forest-700">
+                      <div className="w-10 h-10 rounded-full bg-forest-100 flex items-center justify-center text-forest-600">
+                        <Building2 className="w-5 h-5" />
+                      </div>
+                      <span>Kompletné zázemie</span>
                     </div>
-                    <span>Kompletné zázemie</span>
                   </div>
-                </div>
+                </article>
+                <ContactForm />
               </div>
-              <ContactForm />
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </main>
+        <footer>
+          {/* Prípadne sem môžeš vložiť Footer komponent ak existuje */}
+        </footer>
+      </>
     </>
   );
 }

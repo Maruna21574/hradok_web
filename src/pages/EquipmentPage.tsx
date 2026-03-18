@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import InquirySection from '../components/InquirySection';
 
@@ -62,29 +62,36 @@ const EquipmentPage = () => {
         <meta name="description" content="Kompletné vybavenie hotela Hrádok: wellness, detský kútik, kuchyňa, bar, herňa, záhrada s grilom, vináreň, jedáleň, ubytovanie. Súkromie, komfort, Malá Fatra, Bystrička." />
         <meta name="keywords" content="vybavenie hotel hrádok, wellness hotel, detský kútik, kuchyňa hotel, bar hotel, herňa hotel, záhrada s grilom, vináreň, jedáleň, ubytovanie, hotel Malá Fatra, hotel Bystrička, hotel pre skupiny, hotel pre rodiny, hotel Slovensko, komfort, súkromie" />
       </Helmet>
-      <div className="pt-42 pb-16 bg-forest-50 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl font-serif font-bold text-forest-950 mb-10 text-center">Vybavenie objektu</h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {equipment.map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.link}
-                className="bg-white rounded-3xl shadow-lg border border-forest-100 p-6 flex flex-col items-center text-center hover:shadow-2xl transition-all group cursor-pointer"
-                style={{ textDecoration: 'none' }}
-              >
-                <img src={item.image} alt={item.title} className="w-full h-56 object-cover rounded-2xl mb-6 group-hover:scale-105 transition-transform" />
-                <h2 className="text-2xl font-bold font-serif text-forest-900 mb-2 group-hover:text-forest-600">{item.title}</h2>
-                <p className="text-forest-700 mb-2">{item.desc}</p>
-                <span className="mt-2 text-forest-500 font-semibold group-hover:underline">Zobraziť viac</span>
-              </Link>
-            ))}
+      <header>
+        <nav>{/* Prípadne Navbar */}</nav>
+      </header>
+      <main className="pt-42 pb-16 bg-forest-50 min-h-screen">
+        <section>
+          <div className="max-w-7xl mx-auto px-4">
+            <h1 className="text-5xl font-serif font-bold text-forest-950 mb-10 text-center">Vybavenie objektu</h1>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {equipment.map((item, idx) => (
+                <article key={idx}>
+                  <Link
+                    to={item.link}
+                    className="bg-white rounded-3xl shadow-lg border border-forest-100 p-6 flex flex-col items-center text-center hover:shadow-2xl transition-all group cursor-pointer"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <img src={item.image} alt={item.title} className="w-full h-56 object-cover rounded-2xl mb-6 group-hover:scale-105 transition-transform" />
+                    <h2 className="text-2xl font-bold font-serif text-forest-900 mb-2 group-hover:text-forest-600">{item.title}</h2>
+                    <p className="text-forest-700 mb-2">{item.desc}</p>
+                    <span className="mt-2 text-forest-500 font-semibold group-hover:underline">Zobraziť viac</span>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            <div className="mt-20">
+              <InquirySection />
+            </div>
           </div>
-          <div className="mt-20">
-            <InquirySection />
-          </div>
-        </div>
-      </div>
+        </section>
+      </main>
+      <footer>{/* Prípadne Footer */}</footer>
     </>
   );
 };

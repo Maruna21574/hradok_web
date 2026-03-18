@@ -1,6 +1,6 @@
 import React from 'react';
 import InquirySection from '../../components/InquirySection';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const gallery = [
   '/pics/welness/AttelierKay..-9.webp',
