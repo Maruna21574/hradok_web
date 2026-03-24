@@ -1,3 +1,5 @@
+import EquipmentCommonRoomPage from './pages/equipment/CommonRoomPage';
+            <Route path="/vybavenie/spolocenska-miestnost" element={<EquipmentCommonRoomPage />} />
 import React from 'react';
 // import CookieConsent from 'react-cookie-consent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -39,11 +41,13 @@ export default function App() {
             <Route path="/rezervacia" element={<BookingPage />} />
             <Route path="/vybavenie" element={<EquipmentPage />} />
             <Route path="/vybavenie/detsky-kutik" element={<EquipmentKidsCornerPage />} />
+            <Route path="/vybavenie/zahrada-gril" element={<EquipmentGardenPage />} />
             <Route path="/vybavenie/wellness" element={<EquipmentWellnessPage />} />
             <Route path="/vybavenie/kuchyna" element={<EquipmentKitchenPage />} />
             <Route path="/vybavenie/bar" element={<EquipmentBarPage />} />
             <Route path="/vybavenie/herna" element={<EquipmentGameRoomPage />} />
-            <Route path="/vybavenie/zahrada-gril" element={<EquipmentGardenPage />} />
+            <Route path="/vybavenie/spolocenska-miestnost" element={<EquipmentCommonRoomPage />} />
+            <Route path="/vybavenie/vinaren" element={<EquipmentWineCellarPage />} />
             <Route path="/vybavenie/vinaren" element={<EquipmentWineCellarPage />} />
             <Route path="/vybavenie/restaurant" element={<EquipmentDiningRoomPage />} />
             <Route path="/vybavenie/jedalen" element={<EquipmentDiningRoomPage />} />

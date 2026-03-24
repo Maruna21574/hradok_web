@@ -4,6 +4,18 @@ import { Link } from 'react-router-dom';
 import InquirySection from '../components/InquirySection';
 
 const equipment = [
+    {
+      title: 'Vináreň',
+      desc: 'Atmosférická vináreň vhodná na večerné posedenia alebo ochutnávky vín. Ideálne miesto na neformálne rozhovory a zážitky.',
+      image: 'pics/vinaren/vinaren.webp',
+      link: '/vybavenie/vinaren',
+    },
+    {
+      title: 'Spoločenská miestnosť',
+      desc: 'Priestranná spoločenská miestnosť vhodná na svadby, oslavy, prednášky či firemné prezentácie. Ideálne miesto na stretnutia a podujatia,',
+      image: '/pics/spolocenska_miestnost/IMG_4635.webp',
+      link: '/vybavenie/spolocenska-miestnost',
+    },
   {
     title: 'Detský kútik',
     desc: 'Bezpečný a hravý priestor pre najmenších hostí s množstvom hračiek, hier a kreatívnych aktivít. Ideálne miesto pre deti počas rodinných osláv, svadieb či firemných akcií.',
@@ -35,8 +47,8 @@ const equipment = [
     link: '/vybavenie/herna',
   },
   {
-    title: 'Vonkajšia záhrada a gril',
-    desc: 'Rozľahlá záhrada s grilom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.',
+    title: 'Vonkajšia záhrada a ohnisko',
+    desc: 'Rozľahlá záhrada s ohniskom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.',
     image: '/pics/vonkajsia_zahrada/AttelierKay..-92.webp',
     link: '/vybavenie/zahrada-gril',
   },

@@ -33,7 +33,7 @@ const EquipmentWellnessPage = () => {
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Wellness</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
-            Doprajte si dokonalý relax v našom wellness centre. Čaká na vás fínska a parná sauna a oddychová zóna s ležadlami. Wellness je ideálny na regeneráciu po turistike, športových aktivitách alebo ako súčasť súkromnej oslavy. Vychutnajte si súkromie a pokoj len pre vašu skupinu.
+            Doprajte si dokonalý relax v našom wellness centre. Čaká na vás fínska, infra a parná sauna a oddychová zóna s ležadlami a malá fitness miestnosť. Wellness je ideálny na regeneráciu po turistike, športových aktivitách alebo ako súčasť súkromnej oslavy. Vychutnajte si súkromie a pokoj len pre vašu skupinu.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {gallery.map((src, idx) => (

@@ -65,7 +65,7 @@ const ServiceDetailPage = () => {
               </p>
               <div className="flex flex-wrap gap-6 text-white/80 text-sm uppercase tracking-widest font-bold">
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-forest-400" /> Kapacita do 100 osôb
+                  <Users className="w-4 h-4 text-forest-400" /> Kapacita do 80 osôb
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-forest-400" /> Celoročná prevádzka
@@ -98,7 +98,7 @@ const ServiceDetailPage = () => {
                 </div>
                 <div>
                   <p className="text-forest-500 text-[10px] uppercase tracking-widest font-bold mb-1">Kapacita</p>
-                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">Do 100 hostí</p>
+                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">Do 80 hostí</p>
                 </div>
               </article>
               <article className="flex items-start gap-4">
@@ -107,7 +107,7 @@ const ServiceDetailPage = () => {
                 </div>
                 <div>
                   <p className="text-forest-500 text-[10px] uppercase tracking-widest font-bold mb-1">Ubytovanie</p>
-                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">40 pevných lôžok</p>
+                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">37 pevných lôžok a 12 izieb</p>
                 </div>
               </article>
               <article className="flex items-start gap-4">
@@ -136,6 +136,15 @@ const ServiceDetailPage = () => {
                 <p className="text-forest-800 text-xl leading-relaxed mb-12 font-light">
                   {service.longDesc}
                 </p>
+                {/* Špeciálny popis pre firemné akcie */}
+                {service.id === 'firmy' && (
+                  <div className="bg-forest-50 border border-forest-200 rounded-2xl p-6 mb-8 mt-2">
+                    <p className="text-forest-900 text-lg font-semibold mb-2">Potrebujete väčšiu kapacitu ubytovania?</p>
+                    <p className="text-forest-800 text-base font-light">
+                      V prípade záujmu o väčší počet ubytovaných spolupracujeme s neďaleko vzdialeným <b>Penziónom Eso</b> (25 izieb, 50 pevných lôžok).
+                    </p>
+                  </div>
+                )}
                 <div className="grid sm:grid-cols-2 gap-6">
                   {service.features.map((feature, i) => (
                     <motion.div 

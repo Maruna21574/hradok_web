@@ -13,7 +13,7 @@ export const services = [
   {
     id: 'svadby',
     title: "Svadby",
-    desc: "Kompletný prenájom pre váš veľký deň v súkromí hôr.",
+    desc: "Kompletný prenájom priestorov pre váš veľký deň v súkromí hôr.",
     longDesc: "Váš svadobný deň si zaslúži výnimočné miesto. Ponúkame exkluzívny prenájom celého objektu, čo zaručuje absolútne súkromie pre vás a vašich hostí. Naše priestory sú ideálne pre romantické svadby a jubileá.",
     features: ["Kapacita do 40 hostí", "Ubytovanie pre svadobčanov", "Možnosť obradu v prírode", "Kompletný catering na mieru"],
     icon: <Star className="w-8 h-8" />,
@@ -54,7 +54,7 @@ export const services = [
   },
   {
     id: 'tabory',
-    title: "Detské tábory",
+    title: "Detské tábory a športové sústredenia",
     desc: "Ideálne priestory pre organizované detské podujatia.",
     longDesc: "Bezpečné a podnetné prostredie pre detské tábory, školy v prírode alebo športové sústredenia. Naša poloha mimo hlavnej cesty zaručuje bezpečnosť a priamy kontakt s prírodou.",
     features: ["Bezpečný areál", "Blízkosť turistických chodníkov", "Domáca strava", "Spoločenské hry a vybavenie"],
@@ -95,7 +95,7 @@ const ServicesSection = () => {
               Váš súkromný <br /> priestor pre akcie
             </h2>
             <p className="text-forest-200 mb-10 text-lg leading-relaxed">
-              Ponúkame kompletné zázemie pre vaše podujatia, od ubytovania až po gastronomické zážitky v našej vinárni.
+              Ponúkame kompletný prenájom pre vaše podujatia, od ubytovania až po zabezpečenie cateringu.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 text-forest-300">

@@ -37,10 +37,10 @@ const AboutPage = () => {
       link: '/vybavenie/herna',
     },
     {
-      title: 'Vonkajšia záhrada a gril',
-      desc: 'Rozľahlá záhrada s grilom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.',
+      title: 'Vonkajšia záhrada a ohnisko',
+      desc: 'Rozľahlá záhrada s ohniskom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.',
       image: '/pics/vonkajsia_zahrada/AttelierKay..-92.webp',
-      link: '/vybavenie/zahrada-gril',
+      link: '/vybavenie/zahrada-ohnisko',
     },
     {
       title: 'Jedáleň',

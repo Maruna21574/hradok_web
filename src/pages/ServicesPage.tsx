@@ -59,7 +59,7 @@ const ServicesPage = () => {
                   Váš súkromný <br /> priestor pre akcie
                 </h2>
                 <p className="text-forest-800 text-lg leading-relaxed mb-10">
-                  Ponúkame kompletné zázemie pre vaše podujatia, od ubytovania až po gastronomické zážitky v našej vinárni.
+                  Ponúkame kompletný prenájom pre vaše podujatia, od ubytovania až po zabezpečenie cateringu. Naše služby sú navrhnuté tak, aby vám poskytli maximálny komfort a súkromie v nádhernom prírodnom prostredí Turca.
                 </p>
                 <div className="flex flex-wrap gap-8">
                   <div className="flex flex-col gap-2">

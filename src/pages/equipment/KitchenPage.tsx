@@ -21,7 +21,7 @@ const EquipmentKitchenPage = () => {
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Kuchyňa</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
-            Plne vybavená kuchyňa na prípravu vlastných jedál alebo catering. K dispozícii sú všetky potrebné spotrebiče a riad.
+            Plne vybavená kuchyňa na prípravu vlastných jedál alebo catering. K dispozícii sú všetky potrebné spotrebiče a kuchynský riad pre maximálne 100 ľudí. V prípade záujmu o catering vám radi odporučíme spoľahlivých dodávateľov, ktorí zabezpečia chutné jedlá priamo na váš event. Tiež aj prenosné výčapné zariadenie na čapovanie piva alebo nealko nápojov a kotlíky na vonkajšie varenie gulášu alebo iných jedál.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {gallery.map((src, idx) => (

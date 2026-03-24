@@ -18,7 +18,7 @@ const CapacityInfo = () => {
             <div className="text-xs uppercase tracking-widest text-forest-600">Lôžok</div>
           </div>
           <div className="bg-white rounded-2xl shadow p-8 flex-1">
-            <div className="text-5xl font-serif font-bold text-forest-900 mb-2">5</div>
+            <div className="text-5xl font-serif font-bold text-forest-900 mb-2">6</div>
             <div className="text-xs uppercase tracking-widest text-forest-600">Prísteliek</div>
           </div>
         </div>

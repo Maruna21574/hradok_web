@@ -73,7 +73,7 @@ const AboutPreview = () => {
                 className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <img 
-                  src="/pics/hradok_zaber.webp" 
+                  src="pics\hotel_hradok\AttelierKay..-83.webp" 
                   alt="Hotel Hrádok Exterior" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -143,17 +143,17 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Hotel Hrádok – Súkromné akcie v prírode</title>
-        <meta name="description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta name="description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory a športové sústredenia v srdci hôr. Súkromie, komfort, zážitky." />
         <meta name="keywords" content="hotel hrádok, hotel bystrička, svadba, oslava, firemná akcia, ubytovanie, Turiec, Malá Fatra, príroda, prenájom, event, catering, wellness, teambuilding, rodinná dovolenka, svadobný hotel, firemné školenie, detský tábor, exkluzívny prenájom, súkromie, horský hotel, hotel v prírode, hotel Slovensko, hotel Turiec, hotel Malá Fatra, hotel Martin, hotel Žilina, wellness hotel, hotel s cateringom, hotel s wellnessom, hotel pre skupiny, hotel pre firmy, hotel pre svadby, hotel pre oslavy, hotel pre deti" />
         <meta property="og:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
-        <meta property="og:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta property="og:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory a športové sústredenia v srdci hôr. Súkromie, komfort, zážitky." />
         <meta property="og:image" content="/pics/hradok_den.webp" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hotelhradok.eu" />
         <meta property="og:locale" content="sk_SK" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
-        <meta name="twitter:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory v srdci hôr. Súkromie, komfort, zážitky." />
+        <meta name="twitter:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory a športové sústredenia v srdci hôr. Súkromie, komfort, zážitky." />
         <meta name="twitter:image" content="/pics/hradok_den.webp" />
         <script type="application/ld+json">
           {`

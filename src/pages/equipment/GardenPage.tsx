@@ -22,7 +22,7 @@ const EquipmentGardenPage = () => {
       </Helmet>
       <div className="pt-24 pb-16 bg-forest-50 min-h-screen">
         <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Vonkajšia záhrada a gril</h1>
+          <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Vonkajšia záhrada a ohnisko</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
             Rozľahlá záhrada s grilom, posedením a priestorom na hry a oddych. Ideálne na letné večery, rodinné oslavy či firemné teambuildingy.
           </p>

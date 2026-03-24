@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InquirySection from '../../components/InquirySection';
 import { Helmet } from 'react-helmet-async';
 
 const gallery = [
-  '/pics/vinaren1.webp',
-  '/pics/vinaren2.webp',
+  '/pics/vinaren/vinaren.webp',
   // Pridaj ďalšie fotky podľa potreby
 ];
 
 const EquipmentWineCellarPage = () => {
+  const [modal, setModal] = useState<{ open: boolean; idx: number }>({ open: false, idx: 0 });
   return (
     <>
       <Helmet>
@@ -20,13 +20,51 @@ const EquipmentWineCellarPage = () => {
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-forest-950 mb-6 text-center">Vináreň</h1>
           <p className="text-forest-700 text-lg mb-8 text-center">
-            Atmosférická vináreň vhodná na večerné posedenia alebo ochutnávky vín. Ideálne miesto na neformálne rozhovory a zážitky.
+            Ponorte sa do sveta podmanivých chutí v našej štýlovej vinárni, kde sa komorná atmosféra stretáva s eleganciou. Tento priestor je ako stvorený na večerné posedenia pri pohári kvalitného vína, profesionálne ochutnávky s výkladom alebo neformálne rozhovory v úzkom kruhu priateľov či obchodných partnerov. Intímne osvetlenie a výnimočný interiér dotvárajú kulisu pre hlboké zážitky, ktoré v bežnom zhone nenájdete. Je to ideálne útočisko pre všetkých, ktorí hľadajú kľud, kvalitu a autentickú atmosféru pre svoje súkromné eventy alebo teambuildingové večery.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {gallery.map((src, idx) => (
-              <img key={idx} src={src} alt={`Vináreň ${idx+1}`} className="w-full h-64 object-cover rounded-2xl shadow" />
+              <img
+                key={idx}
+                src={src}
+                alt={`Vináreň ${idx+1}`}
+                className="w-full h-64 object-cover rounded-2xl shadow cursor-pointer hover:scale-105 transition-transform"
+                onClick={() => setModal({ open: true, idx })}
+              />
             ))}
           </div>
+          {/* Modal gallery */}
+          {modal.open && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+              <button
+                className="absolute top-6 right-6 text-white text-3xl font-bold bg-black/40 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/70 transition"
+                onClick={() => setModal({ open: false, idx: 0 })}
+                aria-label="Zavrieť galériu"
+              >
+                ×
+              </button>
+              <button
+                className="absolute left-4 md:left-12 text-white text-4xl font-bold bg-black/40 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/70 transition"
+                onClick={() => setModal(m => ({ open: true, idx: (m.idx - 1 + gallery.length) % gallery.length }))}
+                aria-label="Predchádzajúca fotka"
+              >
+                ‹
+              </button>
+              <img
+                src={gallery[modal.idx]}
+                alt={`Vináreň ${modal.idx + 1}`}
+                className="max-h-[80vh] max-w-[90vw] rounded-2xl shadow-2xl border-4 border-white"
+                style={{ objectFit: 'contain' }}
+              />
+              <button
+                className="absolute right-4 md:right-12 text-white text-4xl font-bold bg-black/40 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/70 transition"
+                onClick={() => setModal(m => ({ open: true, idx: (m.idx + 1) % gallery.length }))}
+                aria-label="Ďalšia fotka"
+              >
+                ›
+              </button>
+            </div>
+          )}
         </div>
         <div className="mt-16">
           <InquirySection />
