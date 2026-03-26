@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           {/* Right: Rezervovať objekt */}
           <div className="flex justify-center md:justify-end">
-            <Link to="/rezervacia" className="bg-forest-600 hover:bg-forest-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all shadow-lg shadow-forest-900/20 w-full md:w-auto text-center">
+            <Link to="/rezervacia" className="bg-forest-600 hover:bg-forest-700 text-white px-6 py-2 rounded-full text-base md:text-lg font-semibold transition-all shadow-lg shadow-forest-900/20 w-full md:w-auto text-center">
               Rezervovať objekt
             </Link>
           </div>

@@ -61,7 +61,7 @@ const ServicesPage = () => {
                 <p className="text-forest-800 text-lg leading-relaxed mb-10">
                   Ponúkame kompletný prenájom pre vaše podujatia, od ubytovania až po zabezpečenie cateringu. Naše služby sú navrhnuté tak, aby vám poskytli maximálny komfort a súkromie v nádhernom prírodnom prostredí Turca.
                 </p>
-                <div className="flex flex-wrap gap-8">
+                <div className="flex flex-wrap gap-6">
                   <div className="flex flex-col gap-2">
                     <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-forest-600 shadow-sm">
                       <Star className="w-6 h-6" />

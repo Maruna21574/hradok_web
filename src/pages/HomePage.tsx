@@ -36,13 +36,13 @@ const Hero = () => {
             Prenajmite si celý objekt hotela Hrádok pre vašu svadbu, oslavu alebo firemný teambuilding v srdci Malej Fatry.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/rezervacia" className="w-full sm:w-auto bg-white text-forest-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-forest-100 transition-all transform hover:scale-105 text-center">
+            <Link to="/rezervacia" className="w-full sm:w-auto bg-white text-forest-900 px-6 py-3 rounded-full font-bold text-base sm:text-lg hover:bg-forest-100 transition-all transform hover:scale-105 text-center">
               Rezervovať celý objekt
             </Link>
-            <Link to="/sluzby" className="w-full sm:w-auto bg-transparent border border-white/40 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all text-center">
+            <Link to="/sluzby" className="w-full sm:w-auto bg-transparent border border-white/40 text-white px-6 py-3 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition-all text-center">
               Naše služby
             </Link>
-            <Link to="/vybavenie" className="w-full sm:w-auto bg-forest-300 text-forest-950 px-8 py-4 rounded-full font-bold text-lg hover:bg-forest-200 transition-all text-center">
+            <Link to="/vybavenie" className="w-full sm:w-auto bg-forest-300 text-forest-950 px-6 py-3 rounded-full font-bold text-base sm:text-lg hover:bg-forest-200 transition-all text-center">
               Vybavenie
             </Link>
           </div>

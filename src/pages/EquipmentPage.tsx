@@ -92,7 +92,7 @@ const EquipmentPage = () => {
                     <img src={item.image} alt={item.title} className="w-full h-56 object-cover rounded-2xl mb-6 group-hover:scale-105 transition-transform" />
                     <h2 className="text-2xl font-bold font-serif text-forest-900 mb-2 group-hover:text-forest-600">{item.title}</h2>
                     <p className="text-forest-700 mb-2">{item.desc}</p>
-                    <span className="mt-2 text-forest-500 font-semibold group-hover:underline">Zobraziť viac</span>
+                    <span className="mt-2 text-forest-500 font-semibold group-hover:underline text-base md:text-lg">Zobraziť viac</span>
                   </Link>
                 </article>
               ))}

@@ -101,7 +101,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/rezervacia" className="bg-forest-600 text-white py-3 rounded-xl font-bold mt-2 text-center">
+            <Link to="/rezervacia" className="bg-forest-600 text-white py-2 rounded-xl font-bold mt-2 text-center text-base">
               Rezervovať pobyt
             </Link>
           </motion.div>
