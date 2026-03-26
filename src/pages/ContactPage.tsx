@@ -62,10 +62,10 @@ const ContactPage = () => {
                   <div className="mt-12">
                     <p className="font-bold text-forest-900 mb-4">Sledujte nás</p>
                     <div className="flex gap-4">
-                      <a href="#" className="w-12 h-12 bg-forest-600 text-white rounded-full flex items-center justify-center hover:bg-forest-700 transition-all">
+                      <a href="https://www.facebook.com/profile.php?id=61577572285250&locale=sk_SK" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-forest-600 text-white rounded-full flex items-center justify-center hover:bg-forest-700 transition-all" aria-label="Facebook">
                         <Facebook className="w-6 h-6" />
                       </a>
-                      <a href="#" className="w-12 h-12 bg-forest-600 text-white rounded-full flex items-center justify-center hover:bg-forest-700 transition-all">
+                      <a href="https://www.instagram.com/horskyhotelhradok/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-forest-600 text-white rounded-full flex items-center justify-center hover:bg-forest-700 transition-all" aria-label="Instagram">
                         <Instagram className="w-6 h-6" />
                       </a>
                     </div>
