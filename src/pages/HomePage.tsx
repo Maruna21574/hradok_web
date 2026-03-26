@@ -49,7 +49,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
           <div className="w-1 h-2 bg-white rounded-full" />
         </div>

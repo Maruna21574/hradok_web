@@ -94,7 +94,7 @@
                     <tr>
                       <td className="py-2 px-4">Izba č.5</td>
                       <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 2x manželská posteľ, 1x jednolôžko</span></td>
-                      <td className="py-2 px-4">7</td>
+                      <td className="py-2 px-4">6</td>
                       <td className="py-2 px-4">1</td>
                     </tr>
                     <tr>
@@ -149,8 +149,15 @@
                   </tfoot>
                 </table>
               </div>
-              
             </section>
+
+            {/* Extra capacity info */}
+            <div className="bg-forest-50 border border-forest-200 rounded-2xl p-6 mb-8 mt-2 text-center">
+              <h2 className="text-xl font-bold text-forest-900 mb-2">Potrebujete väčšiu kapacitu ubytovania?</h2>
+              <p className="text-forest-800 text-base font-light">
+                V prípade záujmu o väčší počet ubytovaných spolupracujeme s neďaleko vzdialeným <b>Penziónom Eso</b> (25 izieb, 50 pevných lôžok).
+              </p>
+            </div>
 
             {/* Modal gallery */}
             {modal.open && (
@@ -185,6 +192,7 @@
               </div>
             )}
           </div>
+
           <div className="mt-16">
             <InquirySection />
           </div>
