@@ -15,7 +15,7 @@ export const services = [
     title: "Svadby",
     desc: "Kompletný prenájom priestorov pre váš veľký deň v súkromí hôr.",
     longDesc: "Váš svadobný deň si zaslúži výnimočné miesto. Ponúkame exkluzívny prenájom celého objektu, čo zaručuje absolútne súkromie pre vás a vašich hostí. Naše priestory sú ideálne pre romantické svadby a jubileá.",
-    features: ["Kapacita do 40 hostí", "Ubytovanie pre svadobčanov", "Možnosť obradu v prírode", "Kompletný catering na mieru"],
+    features: ["Kapacita do 43 hostí", "Ubytovanie pre svadobčanov", "Možnosť obradu v prírode", "Kompletný catering na mieru"],
     icon: <Star className="w-8 h-8" />,
     image: "/pics/hradok_svadba_5.webp",
     gallery: [
@@ -44,7 +44,7 @@ export const services = [
     title: "Oslavy",
     desc: "Priestor pre rodinné a firemné oslavy v prírode.",
     longDesc: "Hotel Hrádok je ideálnym miestom pre vaše rodinné oslavy, jubileá, firemné večierky či stretnutia. Ponúkame súkromie, komfort a kompletné zázemie pre nezabudnuteľné zážitky.",
-    features: ["Kapacita do 40 hostí", "Ubytovanie", "Kompletný catering", "Možnosť oslavy v exteriéri"],
+    features: ["Kapacita do 43 hostí", "Ubytovanie", "Kompletný catering", "Možnosť oslavy v exteriéri"],
     icon: <Star className="w-8 h-8" />,
     image: "/pics/hradok_50.webp",
     gallery: [

@@ -10,7 +10,6 @@ const ServiceDetailPage = () => {
   const service = services.find(s => s.id === serviceId);
 
   const [openImgIdx, setOpenImgIdx] = React.useState<number | null>(null);
-  const gallery = service.gallery || [service.image];
 
   if (!service) {
     return (
@@ -22,6 +21,8 @@ const ServiceDetailPage = () => {
       </div>
     );
   }
+
+  const gallery = service.gallery || [service.image];
 
   return (
     <>
@@ -107,7 +108,7 @@ const ServiceDetailPage = () => {
                 </div>
                 <div>
                   <p className="text-forest-500 text-[10px] uppercase tracking-widest font-bold mb-1">Ubytovanie</p>
-                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">37 pevných lôžok a 12 izieb</p>
+                  <p className="text-forest-950 font-serif font-bold text-lg leading-tight">39 lôžok, 4 prístelky a 12 izieb</p>
                 </div>
               </article>
               <article className="flex items-start gap-4">

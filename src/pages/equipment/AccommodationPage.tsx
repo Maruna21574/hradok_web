@@ -93,14 +93,14 @@
                     </tr>
                     <tr>
                       <td className="py-2 px-4">Izba č.5</td>
-                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 2x manželská posteľ, 1x jednolôžko</span></td>
+                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 2x manželská posteľ</span></td>
                       <td className="py-2 px-4">6</td>
-                      <td className="py-2 px-4">1</td>
+                      <td className="py-2 px-4">-</td>
                     </tr>
                     <tr>
                       <td className="py-2 px-4">Izba č.6</td>
-                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 2x samostatná posteľ</span></td>
-                      <td className="py-2 px-4">4</td>
+                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 3x samostatná posteľ</span></td>
+                      <td className="py-2 px-4">5</td>
                       <td className="py-2 px-4">-</td>
                     </tr>
                     <tr>
@@ -111,7 +111,7 @@
                     </tr>
                     <tr>
                       <td className="py-2 px-4">Izba č.8</td>
-                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: jednolôžko</span></td>
+                      <td className="py-2 px-4">Rodinná dvoj-spálňová<br/><span className='text-xs text-forest-600'>1. spálňa: manželská posteľ<br/>2. spálňa: 1x samostatná posteľ</span></td>
                       <td className="py-2 px-4">3</td>
                       <td className="py-2 px-4">-</td>
                     </tr>
@@ -123,9 +123,9 @@
                     </tr>
                     <tr>
                       <td className="py-2 px-4">Izba č.10</td>
-                      <td className="py-2 px-4">Dvojlôžková (manželská posteľ)</td>
-                      <td className="py-2 px-4">2</td>
-                      <td className="py-2 px-4">1</td>
+                      <td className="py-2 px-4">Dvojlôžková (manželská posteľ),  1x samostatná posteľ</td>
+                      <td className="py-2 px-4">3</td>
+                      <td className="py-2 px-4">-</td>
                     </tr>
                     <tr>
                       <td className="py-2 px-4">Izba č.11</td>
@@ -143,8 +143,8 @@
                   <tfoot>
                     <tr className="bg-forest-50 font-bold">
                       <td colSpan={2} className="py-3 px-4 text-right">Celková kapacita</td>
-                      <td className="py-3 px-4">37</td>
-                      <td className="py-3 px-4">6</td>
+                      <td className="py-3 px-4">39</td>
+                      <td className="py-3 px-4">4</td>
                     </tr>
                   </tfoot>
                 </table>
