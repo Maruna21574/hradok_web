@@ -47,13 +47,13 @@ const ServiceDetailPage = () => {
   }
 
   const gallery = service.gallery || [service.image];
-  const canonicalUrl = `https://hotelhradok.eu/sluzby/${service.id}`;
+  const canonicalUrl = `https://www.hotelhradok.eu/sluzby/${service.id}`;
   const seo = serviceSeo[service.id] || {
     title: `${service.title} | Hotel Hrádok`,
     description: service.desc,
     keywords: `Hotel Hrádok, ${service.title}, Turiec, Malá Fatra`,
   };
-  const ogImage = service.image.startsWith('http') ? service.image : `https://hotelhradok.eu${service.image}`;
+  const ogImage = service.image.startsWith('http') ? service.image : `https://www.hotelhradok.eu${service.image}`;
 
   return (
     <>
@@ -83,7 +83,7 @@ const ServiceDetailPage = () => {
             provider: {
               '@type': 'Hotel',
               name: 'Hotel Hrádok',
-              url: 'https://hotelhradok.eu',
+              url: 'https://www.hotelhradok.eu',
             },
             areaServed: ['Turiec', 'Martin', 'Malá Fatra', 'Slovensko'],
           })}

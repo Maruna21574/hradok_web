@@ -149,7 +149,7 @@ const HomePage = () => {
         <meta property="og:description" content="Hotel Hrádok – exkluzívny prenájom, svadby, oslavy, firemné akcie a detské tábory a športové sústredenia v srdci hôr. Súkromie, komfort, zážitky." />
         <meta property="og:image" content="/pics/hradok_den.webp" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hotelhradok.eu" />
+        <meta property="og:url" content="https://www.hotelhradok.eu" />
         <meta property="og:locale" content="sk_SK" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hotel Hrádok – Súkromné akcie v prírode" />
@@ -161,9 +161,9 @@ const HomePage = () => {
               "@context": "https://schema.org",
               "@type": "Hotel",
               "name": "Hotel Hrádok",
-              "image": "https://hotelhradok.eu/pics/hradok_den.webp",
-              "@id": "https://hotelhradok.eu",
-              "url": "https://hotelhradok.eu",
+              "image": "https://www.hotelhradok.eu/pics/hradok_den.webp",
+              "@id": "https://www.hotelhradok.eu",
+              "url": "https://www.hotelhradok.eu",
               "telephone": "+421 905 123 456",
               "address": {
                 "@type": "PostalAddress",

@@ -55,7 +55,7 @@ const BookingPage = () => {
                 <meta property="og:description" content="Rezervujte si exkluzívny prenájom hotela Hrádok pre svadby, oslavy, firemné akcie a teambuilding v Malej Fatre. Súkromie, komfort, zážitky." />
                 <meta property="og:image" content="/pics/hradok_den.webp" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://hotelhradok.eu/rezervacia" />
+                <meta property="og:url" content="https://www.hotelhradok.eu/rezervacia" />
                 <meta property="og:locale" content="sk_SK" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Rezervácia – Hotel Hrádok" />

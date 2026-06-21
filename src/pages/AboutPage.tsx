@@ -96,7 +96,7 @@ const AboutPage = () => {
         <meta property="og:description" content="Hotel Hrádok – tradícia, moderný komfort, exkluzívny prenájom v Malej Fatre. Súkromie, rodinný prístup, horské prostredie." />
         <meta property="og:image" content="/pics/hradok_den.webp" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hotelhradok.eu/o-nas" />
+        <meta property="og:url" content="https://www.hotelhradok.eu/o-nas" />
         <meta property="og:locale" content="sk_SK" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="O nás – Hotel Hrádok" />

@@ -16,7 +16,7 @@ const ServicesPage = () => {
         <meta property="og:description" content="Služby hotela Hrádok: exkluzívny prenájom, vináreň, catering, firemné akcie, svadby, komfort a súkromie v prírode." />
         <meta property="og:image" content="/pics/hradok_den.webp" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hotelhradok.eu/sluzby" />
+        <meta property="og:url" content="https://www.hotelhradok.eu/sluzby" />
         <meta property="og:locale" content="sk_SK" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Služby – Hotel Hrádok" />
