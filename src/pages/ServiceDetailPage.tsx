@@ -1,9 +1,33 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { services } from '../components/ServicesSection';
 import { ChevronRight, CheckCircle2, ArrowLeft, Calendar, Users, Star, ShieldCheck, MapPin, Home } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+
+const serviceSeo: Record<string, { title: string; description: string; keywords: string }> = {
+  svadby: {
+    title: 'Svadby v prírode | Hotel Hrádok',
+    description: 'Svadby v hoteli Hrádok s exkluzívnym prenájmom celého objektu, ubytovaním, cateringom a súkromím v prírode pri Martine.',
+    keywords: 'svadba v prírode, svadobný hotel, svadba Turiec, svadba Martin, Hotel Hrádok, svadba s ubytovaním',
+  },
+  firmy: {
+    title: 'Firemné akcie a teambuilding | Hotel Hrádok',
+    description: 'Firemné akcie, teambuildingy a školenia v súkromnom horskom hoteli Hrádok s ubytovaním, cateringom a vybavením pre skupiny.',
+    keywords: 'firemné akcie, teambuilding, školenie, firemný pobyt, hotel pre firmy, Hotel Hrádok, Turiec',
+  },
+  oslavy: {
+    title: 'Rodinné oslavy a jubileá | Hotel Hrádok',
+    description: 'Rodinné oslavy, jubileá a stretnutia v hoteli Hrádok s exkluzívnym prenájmom, ubytovaním a možnosťou cateringu v prírode.',
+    keywords: 'rodinná oslava, oslava narodenín, jubileum, prenájom hotela, Hotel Hrádok, oslavy Turiec',
+  },
+  tabory: {
+    title: 'Detské tábory a športové sústredenia | Hotel Hrádok',
+    description: 'Bezpečné prostredie pre detské tábory, školy v prírode a športové sústredenia v hoteli Hrádok pri Martine.',
+    keywords: 'detský tábor, športové sústredenie, škola v prírode, ubytovanie pre deti, Hotel Hrádok',
+  },
+};
 
 const ServiceDetailPage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -23,9 +47,48 @@ const ServiceDetailPage = () => {
   }
 
   const gallery = service.gallery || [service.image];
+  const canonicalUrl = `https://hotelhradok.eu/sluzby/${service.id}`;
+  const seo = serviceSeo[service.id] || {
+    title: `${service.title} | Hotel Hrádok`,
+    description: service.desc,
+    keywords: `Hotel Hrádok, ${service.title}, Turiec, Malá Fatra`,
+  };
+  const ogImage = service.image.startsWith('http') ? service.image : `https://hotelhradok.eu${service.image}`;
 
   return (
     <>
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="sk_SK" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={ogImage} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: service.title,
+            description: seo.description,
+            url: canonicalUrl,
+            image: ogImage,
+            provider: {
+              '@type': 'Hotel',
+              name: 'Hotel Hrádok',
+              url: 'https://hotelhradok.eu',
+            },
+            areaServed: ['Turiec', 'Martin', 'Malá Fatra', 'Slovensko'],
+          })}
+        </script>
+      </Helmet>
       <header>
         {/* Hero Section - Editorial Style */}
         <section className="relative min-h-[85vh] w-full overflow-hidden flex items-end pb-20">

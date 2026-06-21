@@ -16,7 +16,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://hotelhradok.eu/sluzby/svadby</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelhradok.eu/sluzby/firmy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelhradok.eu/sluzby/oslavy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelhradok.eu/sluzby/tabory</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hotelhradok.eu/kontakt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelhradok.eu/lokalita</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -52,6 +77,11 @@
   </url>
   <url>
     <loc>https://hotelhradok.eu/vybavenie/herna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hotelhradok.eu/vybavenie/spolocenska-miestnost</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
