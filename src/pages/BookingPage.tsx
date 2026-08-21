@@ -133,6 +133,10 @@ const BookingPage = () => {
                 <h2 className="text-2xl font-serif font-bold text-forest-900 mb-8">Rezervačný formulár</h2>
                 {error && <div className="text-red-600 mb-4 font-bold">{error}</div>}
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="absolute left-[-9999px]" aria-hidden="true">
+                    <label htmlFor="booking-website">Website</label>
+                    <input id="booking-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>

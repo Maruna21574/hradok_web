@@ -5,8 +5,10 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    website: ''
   });
+  const [formStartedAt] = useState(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -24,6 +26,8 @@ const ContactForm = () => {
     formDataToSend.append('message', formData.message);
     formDataToSend.append('extraInfo', formData.message);
     formDataToSend.append('eventType', 'kontakt');
+    formDataToSend.append('website', formData.website);
+    formDataToSend.append('formStartedAt', String(formStartedAt));
     try {
       const response = await fetch('https://api.hotelhradok.eu/mail.php', {
         method: 'POST',
@@ -56,6 +60,18 @@ const ContactForm = () => {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="absolute left-[-9999px]" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-bold text-forest-700 mb-2">Meno a priezvisko</label>

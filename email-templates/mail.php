@@ -8,6 +8,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Povolená je iba metóda POST.']);
+    exit();
+}
+
+// Obmedz počet požiadaviek ešte pred odoslaním emailu.
+function is_rate_limited() {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $file = sys_get_temp_dir() . '/hotel-hradok-mail-rate-' . hash('sha256', $ip) . '.json';
+    $now = time();
+    $window = 600;
+    $maxRequests = 5;
+    $handle = fopen($file, 'c+');
+    if (!$handle) {
+        return false;
+    }
+    flock($handle, LOCK_EX);
+    $contents = stream_get_contents($handle);
+    $timestamps = json_decode($contents ?: '[]', true);
+    if (!is_array($timestamps)) {
+        $timestamps = [];
+    }
+    $timestamps = array_values(array_filter($timestamps, function ($timestamp) use ($now, $window) {
+        return is_int($timestamp) && $timestamp > $now - $window;
+    }));
+    $limited = count($timestamps) >= $maxRequests;
+    if (!$limited) {
+        $timestamps[] = $now;
+        ftruncate($handle, 0);
+        rewind($handle);
+        fwrite($handle, json_encode($timestamps));
+    }
+    flock($handle, LOCK_UN);
+    fclose($handle);
+    return $limited;
+}
 
 // Funkcia na logovanie
 function log_mail($msg) {
@@ -27,6 +64,7 @@ if (isset($_POST['name']) || isset($_FILES['attachments'])) {
     $guests = trim($_POST['guests'] ?? '');
     $extraInfo = trim($_POST['extraInfo'] ?? '');
     $website = trim($_POST['website'] ?? '');
+    $formStartedAt = (int) ($_POST['formStartedAt'] ?? 0);
     // Honeypot antispam
     if (!empty($website)) {
         http_response_code(200);
@@ -60,6 +98,7 @@ if (isset($_POST['name']) || isset($_FILES['attachments'])) {
     $guests = trim($data['guests'] ?? '');
     $extraInfo = trim($data['extraInfo'] ?? '');
     $website = trim($data['website'] ?? '');
+    $formStartedAt = (int) ($data['formStartedAt'] ?? 0);
     // Honeypot antispam
     if (!empty($website)) {
         http_response_code(200);
@@ -69,11 +108,34 @@ if (isset($_POST['name']) || isset($_FILES['attachments'])) {
     $hasAttachment = false;
 }
 
+if (is_rate_limited()) {
+    http_response_code(429);
+    echo json_encode(['error' => 'Príliš veľa požiadaviek. Skúste to znova neskôr.']);
+    exit();
+}
+
 if (!$name || !$email || !$eventType) {
     log_mail('ERROR: Chýbajú povinné údaje. name=' . $name . ' email=' . $email . ' eventType=' . $eventType);
     http_response_code(400);
     echo json_encode(['error' => 'Chýbajú povinné údaje.']);
     exit();
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($name) > 120 || strlen($email) > 254 || strlen($phone) > 40 || strlen($extraInfo) > 5000) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Údaje formulára nie sú platné.']);
+    exit();
+}
+if (stripos($eventType, 'kontakt') !== false) {
+    if ($formStartedAt > 0 && (time() * 1000 - $formStartedAt < 3000 || time() * 1000 - $formStartedAt > 7200000)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Formulár bol odoslaný príliš rýchlo alebo jeho platnosť vypršala.']);
+        exit();
+    }
+    if (strlen($extraInfo) < 10) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Správa je príliš krátka.']);
+        exit();
+    }
 }
 
 $year = date('Y');
